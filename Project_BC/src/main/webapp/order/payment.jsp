@@ -52,7 +52,7 @@ IMP.request_pay({
     pay_method : '<%=pay_method%>',
     merchant_uid : 'merchant_' + new Date().getTime(),
     name : '주문명:결제테스트',
-    amount : 1, //판매 가격
+    amount : 100, //판매 가격
 <%--     amount : <%=amount%>, //판매 가격 --%>
     buyer_email : '<%=buyer_email%>',
     buyer_name : '<%=buyer_name%>',
