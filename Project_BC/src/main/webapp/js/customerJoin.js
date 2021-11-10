@@ -1,4 +1,5 @@
-var checkIdResult = false, checkPasswdResult = false;
+var checkIdResult = false
+var checkPasswdResult = false;
 var passwordRetypeCheckResult = false;
 var checkNameResult = false;
 var checkPhoneResult = false;
@@ -7,7 +8,7 @@ var checkPhoneResult = false;
 function openWindow(target) {
 
 	if(target == "dupIdCheck") {
-		document.open("member/dupIdCheck.jsp","","width=400,height=150");
+		 document.open("member/dupIdCheck.jsp", "_blank", "titlebar=no,toolbar=no,scrollbars=no,resizable=no,top=330,left=150,width=400,height=200");
 	} 
 	
 	if(document.fr.member_id.value != null){
@@ -123,7 +124,7 @@ function checkLastPhone(lastNumber) {
 	var regex = /^[ㄱ-힣가-힣A-Za-z_]{3,4}$/g;
 	
 	if(regex.exec(lastNumber)) { 
-		alert('전화번호는 숫자만 가능합니다');
+		alert('전2화번호는 숫자만 가능합니다');
 		checkPhoneResult = true;
 	} 
 	

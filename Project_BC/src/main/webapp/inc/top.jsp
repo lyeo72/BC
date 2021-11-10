@@ -81,7 +81,7 @@
         if(sId==null){
         %>
         <!-- 세션에 "id" 속성값이 없을 경우 login, join 버튼 표시 -->
-        <li><a id="head_login_a" href="MemberLoginForm.me" onclick='window.open("MemberLoginForm.me","_blank","height=500,width=500, status=yes,toolbar=no,menubar=no,location=no");return false'>로그인</a></li>
+     <li><a id="head_login_a" href="MemberLoginForm.me" onclick='window.open("MemberLoginForm.me", "_blank", "titlebar=no,toolbar=no,scrollbars=no,resizable=no,top=225,left=730,width=490,height=430");return false'>로그인</a></li>
         <li><a id="head_login_b" href="MemberJoinForm.me">회원가입</a></li>
         <li><a href="CustCenterMain.co">고객센터</a></li>   
         

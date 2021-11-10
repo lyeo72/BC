@@ -18,7 +18,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>[집밥 선생] 신규회원가입</title>
+<script type="text/javascript">
+</script>
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/customerJoin.js"></script> 
 <script src="js/sendEmail.js"></script>
@@ -28,9 +30,6 @@
 <link href="CSS/sub.css" rel="stylesheet" type="text/css">
 <link href="CSS/font.css" rel="stylesheet" type="text/css">
 <link rel="shortcut icon" href="#">
-<script type="text/javascript">
-
-</script>
 </head>
 <body>
   <jsp:include page="/inc/top.jsp" />
@@ -103,12 +102,9 @@
 
 					<input type="text" id="recomm_remark" name="member_phone" maxlength="40" placeholder="휴대폰 번호">
 					<div class="info_txt">※전화번호는 - 을 빼고 입력해주세요</div>
-
 					<span class="caution ir" id="caution5"></span>
 					<!-- 2017.06.08 추가 : 추천인 기입란 -->
 					<label for="recomm_remark"></label>
-					<input type="text" id="recomm_remark" name="member_recommendID" maxlength="40" placeholder="추천인 아이디(선택)">
-					<div class="info_txt">※ 더반찬을 추천해준 회원이 있으시면 추천 아이디를 입력해 주세요</div>
 				</div>
 			</div>
 
@@ -119,7 +115,6 @@
 						<li>
 							<input type="checkbox" id="all_agree" name="checkAll" value="N" onclick="checkedAll()">
 							<label for="all_agree" style="color: #555;"><b>전체 동의</b>
-							<span class="join_agreement_msg">전체 동의시 <em class="join_point_msg">적립금 1,000원</em> 증정! 더 많은 혜택을 받을 수 있어요.</span>
 							</label>
 							<ul class="agree_list">
 								<li class="agree_point_txt">필수 항목</li>

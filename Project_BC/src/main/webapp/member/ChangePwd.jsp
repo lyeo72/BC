@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>[집밥 선생] 비밀번호 변경 페이지</title>
 <script src="js/jquery-3.6.0.js"></script>
 <%
 String  fid = (String)session.getAttribute("fId");
@@ -134,7 +134,7 @@ $('.target_id').text(param);
 <link href="CSS/font.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	  <jsp:include page="/inc/top.jsp" />
+	 <jsp:include page="/inc/top.jsp" />
 <div class="content" style="padding-top: 269px;">
 	<!-- WRAP -->
 	<div class="wrap mem">

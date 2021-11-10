@@ -33,5 +33,26 @@ public class MemberLoginProService {
 		return grade;
 	}
 
+	public int autoLoginFindGrade(String login_id) {
+		int grade = 0;
+		
+		Connection con = getConnection();
+		
+		MemberDAO dao = MemberDAO.getInstance();
+		
+		dao.setConnection(con);
+		
+		
+		grade = dao.autoLoginFindGrade(login_id);
+		
+		
+		
+		
+		close(con);
+		
+
+		return grade;
+	}
+
 }
 

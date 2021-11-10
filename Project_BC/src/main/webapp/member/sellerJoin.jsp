@@ -4,7 +4,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>[집밥 선생]사업자 회원가입</title>
+<script type="text/javascript">
+
+function plzHelpMe() {
+	if(document.fr.checkAll.checked){
+		document.fr.add_info1.checked = true;
+		document.fr.add_info2.checked = true;
+		document.fr.add_info3.checked = true;
+		
+		document.fr.personal_Data1.checked = true;
+		document.fr.personal_Data2.checked = true;
+		document.fr.personal_Data3.checked = true;
+	}else{
+		document.fr.add_info1.checked = false;
+		document.fr.add_info2.checked = false;
+		document.fr.add_info3.checked = false;
+		
+		document.fr.personal_Data1.checked = false;
+		document.fr.personal_Data2.checked = false;
+		document.fr.personal_Data3.checked = false;
+	}
+	
+}
+
+
+
+</script>
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/sellerJoin.js"></script> 
 <script src="js/sendEmail.js"></script>
@@ -118,9 +144,6 @@
 		
 					<!-- 2017.06.08 추가 : 추천인 기입란 -->
 					<label for="recomm_remark"></label>
-					<input type="text" id="recomm_remark" name="member_recommendID" maxlength="40" placeholder="추천인 아이디(선택)">
-					<div class="info_txt">※ 더반찬을 추천해준 회원이 있으시면 추천 아이디를 입력해 주세요</div>
-					
 					<div class="addr_form">
 						<span class="dw_txt">
 							<input type="hidden" id="base_addr" name="base_addr"> 
@@ -151,34 +174,33 @@
 				<div class="join_box" id="join_box" style="min-height: 250px;">
 					<ul class="agree_list" style="margin-top: 41px;padding: 8px 0 0px 0px;">
 						<li>
-							<input type="checkbox" id="all_agree" name="checkAll" value="N" onclick="checkedAll()">
+							<input type="checkbox" id="all_agree" name="checkAll" value="N" onclick="plzHelpMe()">
 							<label for="all_agree" style="color: #555;"><b>전체 동의</b>
-							<span class="join_agreement_msg">전체 동의시 <em class="join_point_msg">적립금 1,000원</em> 증정! 더 많은 혜택을 받을 수 있어요.</span>
 							</label>
 							<ul class="agree_list">
 								<li class="agree_point_txt">필수 항목</li>
 										<li>
-											<input type="checkbox" id="2109000103" name="addinfo1" class="agreeChk validChk" value="2109000103" >
+											<input type="checkbox" id="2109000103" name="add_info1" class="agreeChk validChk" value="2109000103" >
 											<label for="2109000103">서비스 이용약관</label><a href="javascript:overpass.popup.agreeLayer({gbn:'2109000103'})" class="detail arrow_btn01">내용 보기</a>
 										</li>
 										<li>
-											<input type="checkbox" id="2104000099"  name="addinfo2"  class="agreeChk validChk" value="01">
+											<input type="checkbox" id="2104000099"  name="add_info2"  class="agreeChk validChk" value="01">
 											<label for="2104000099">개인정보 이용 및 수집 (필수)</label><a href="javascript:overpass.popup.agreeLayer({gbn:'2104000099'})" class="detail arrow_btn01">내용 보기</a>
 										</li>
 										<li>
-											<input type="checkbox" id="age_agree" class="agreeChk" name="addinfo3" value="N">
+											<input type="checkbox" id="age_agree" class="agreeChk" name="add_info3" value="N">
 											<label for="age_agree">본인은 <strong>만 14세</strong> 이상입니다.</label>
 										</li>
 								<li class="agree_point_txt">선택 항목</li>
-									<li><input type="checkbox" id="2101000093"  class="agreeChk recomm" value="2101000093"><label for="2101000093">개인정보 이용 및 수집 (선택)</label><a href="javascript:overpass.popup.agreeLayer({gbn:2101000093})" class="detail arrow_btn01">내용 보기</a></li>
+									<li><input type="checkbox" id="2101000093"  class="agreeChk recomm"  name="personal_Data1" value="2101000093"><label for="2101000093">개인정보 이용 및 수집 (선택)</label><a href="javascript:overpass.popup.agreeLayer({gbn:2101000093})" class="detail arrow_btn01">내용 보기</a></li>
 										<li style="height: 30px;">
-											<input type="checkbox" id="forever_agree"  class="agreeChk" name="personalData1">
+											<input type="checkbox" id="forever_agree"  class="agreeChk" name="personal_Data2">
 											<input type="hidden" id="forever_member_yn" name="forever_member_yn">
 											<label for="forever_agree">개인정보 평생 보관동의(탈퇴시 삭제)</label><a href="javascript:overpass.popup.foreverAgreeLayer();" class="detail arrow_btn01">내용 보기</a>
 											<br><br>
 										</li>
 										<li>
-											<input type="checkbox" id="recieve_agree" class="agreeChk" name="personalData2">
+											<input type="checkbox" id="recieve_agree" class="agreeChk" name="personal_Data3">
 											<input type="hidden" id="sms_recv_yn" name="sms_recv_yn">
 											<input type="hidden" id="mail_recv_yn" name="mail_recv_yn">
 											<label for="recieve_agree">쇼핑 혜택 SMS 및 이메일 수신</label>

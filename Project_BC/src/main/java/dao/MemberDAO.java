@@ -13,14 +13,14 @@ import vo.CustomerBean;
 import vo.MemberBean;
 import vo.SellerBean;
 
-public class MemberDAO2 {
+public class MemberDAO {
 
-	private static MemberDAO2 instance = new MemberDAO2();
+	private static MemberDAO instance = new MemberDAO();
 
-	private MemberDAO2() {
+	private MemberDAO() {
 	}
 
-	public static MemberDAO2 getInstance() {
+	public static MemberDAO getInstance() {
 
 		return instance;
 	}
@@ -695,41 +695,6 @@ public class MemberDAO2 {
 		return email;
 	}
 
-	public boolean deleteMember(String id, String pwd) {
-		boolean isMemberDelete = false;
-		
-		
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		
-		
-		try {
-			con = getConnection();
-			
-			String sql="DELETE FROM member WHERE id = ? AND password = ?";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, id);
-			pstmt.setString(2, pwd);
-			
-			isMemberDelete = pstmt.execute(sql);
-			
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
-			//자원 반환
-			
-			close(pstmt);
-			close(con);
-			
-		}
-		
-		
-		return isMemberDelete;
 
-	}
-
-
-	  //아무도없는
+	
 }

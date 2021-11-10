@@ -7,7 +7,8 @@ var checkPhoneResult = false;
 function openWindow(target) {
 
 	if(target == "dupIdCheck") {
-		document.open("member/dupIdCheck.jsp","","width=300,height=100");
+
+		 document.open("member/dupIdCheck.jsp", "_blank", "titlebar=no,toolbar=no,scrollbars=no,resizable=no,top=330,left=150,width=400,height=200");
 	} else if(target == "addrSearch") {
 //			document.open("addrSearch.jsp","","width=400,height=300");
 	    new daum.Postcode({
@@ -150,39 +151,6 @@ function checkLastPhone(lastNumber) {
 	} 
 	
 }
-
-
-
-//function checkSubmit() {
-//	if(checkIdResult == false) { 
-//			alert('아이디를 입력해주세요');
-//			document.fr.member_id.focus();
-//			return false;
-//	} else if(checkPasswdResult == false) { 
-//			alert('비밀번호는 영문자,숫자,특수문자를 3종류 이상을 조합하여 만들어주세요');
-//			document.fr.member_pass.focus();
-//			return false;
-//	} 
-//	
-//	if(!document.fr.add_info[0].checked){
-//	alert('필수항목에 체크해주세요!')
-//	return false;
-//	}
-//	else if(!document.fr.add_info[1].checked){
-//	alert('필수항목에 체크해주세요!')
-//	return false;
-//	}
-//	else if(!document.fr.add_info[2].checked){
-//	alert('필수항목에 체크해주세요!')
-//	return false;
-//	
-//	}
-//	
-//	return true;
-//}
-
-
-
 
 
 function checkIdValue() {

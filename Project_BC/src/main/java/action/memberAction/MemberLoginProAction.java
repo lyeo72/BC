@@ -2,6 +2,7 @@ package action.memberAction;
 import java.io.PrintWriter;
 
 
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,11 +25,7 @@ public class MemberLoginProAction implements Action {
 		int grade = 0;			
 		boolean isLoginSuccess = false;
 		
-		if(cookie_login_id != "") {
-			isLoginSuccess = true;
-			login_id = cookie_login_id;
-			
-		} else {
+		if(cookie_login_id == "")  {
 			MemberLoginProService service = new MemberLoginProService();
 			MemberBean member = new MemberBean();
 			member.setId(request.getParameter("login_id"));
@@ -38,10 +35,15 @@ public class MemberLoginProAction implements Action {
 				isLoginSuccess = true;			
 			}
 			login_id = member.getId();		
-						
+		}else{
+			isLoginSuccess = true;
+			login_id = cookie_login_id;
+			MemberLoginProService service = new MemberLoginProService();
+			grade = service.autoLoginFindGrade(login_id);
 			
-		}
+		} 
 
+		
 		if(!isLoginSuccess) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
@@ -71,12 +73,13 @@ public class MemberLoginProAction implements Action {
 			
 			if(checkedLoginyn != null && checkedLoginyn.equals("Y")) {
 				Cookie cookie = new Cookie("login_cookie" , login_id);
+				
 				cookie.setPath("/");
 				
 				long limitTime = 60 * 60*24* 90;
 				cookie.setMaxAge((int)limitTime);
-				
 				response.addCookie(cookie);
+
 			}
 			System.out.println("로그인 성공");
 			forward = new ActionForward();

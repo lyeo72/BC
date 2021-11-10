@@ -74,7 +74,7 @@ public class SellerJoinProAction implements Action {
 			out.println("</script>");
 		} else { 
 			forward = new ActionForward();
-			forward.setPath("main_fail.jsp");
+			forward.setPath("main.jsp");
 			forward.setRedirect(true);
 		}
 	
