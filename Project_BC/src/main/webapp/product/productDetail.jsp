@@ -7,7 +7,7 @@
 <%
 	BoardBean article = (BoardBean)request.getAttribute("article");
     ArrayList<ProductImg> productImg = (ArrayList<ProductImg>)request.getAttribute("productImg");
-	ArrayList<ProductImg> productDtlImg = (ArrayList<ProductImg>)request.getAttribute("productDtlImg");
+// 	ArrayList<ProductImg> productDtlImg = (ArrayList<ProductImg>)request.getAttribute("productDtlImg");
 	String id = (String)session.getAttribute("sId");
 	int price = (Integer)article.getProduct_price() * (100 - article.getProduct_discount())/100;
 	int reviewCount = (Integer)request.getAttribute("reviewCount");
@@ -170,7 +170,7 @@
 								<%for(int i = 0; i < productImg.size(); i++){
                                        if(productImg.get(i).getProduct_img_location() == 1){%>
 									<li class="on"><a href="#gd_img_bx">
-										<img src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.png" width="100" height="100" alt="<%=productImg.get(i).getProduct_original_img() %>" onclick="ChangeImg()"/>
+										<img src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.jpg" width="100" height="100" alt="<%=productImg.get(i).getProduct_original_img() %>" onclick="ChangeImg()"/>
 										<em class="ir"><%=article.getProduct_name()+i %></em></a>
 									</li>
 									<%} 
@@ -294,9 +294,13 @@
 					<h3 class="ir">제품 상세정보</h3>
 					<div class="gd_detail">
 						<div align="center">
-							<%for(int i = 0; i < productDtlImg.size(); i++){%>
-								<img alt="" src="${pageContext.request.contextPath}/img/<%=productDtlImg.get(i).getProduct_img()%>.png"/>
-							<%}%>
+							<%for(int i = 0; i < productImg.size(); i++){
+									if(productImg.get(i).getProduct_img_location() == 2){
+							%>
+							 
+								<img alt="" src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.jpg"/>
+							<%}
+							}%>
 						</div>
 					</div>
 					<!-- DETAIL -->

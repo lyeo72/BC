@@ -521,7 +521,7 @@
                                                                 </a>
                                                             </div>
                                                             <a href="Product.do?product_num=<%=productNum %>" tabindex="0"> 
-                                                                 <img src="${pageContext.request.contextPath}/upload/<%=productImgName %>01_01.png"  width="296" height="296">
+                                                                 <img src="${pageContext.request.contextPath}/upload/<%=productImgName %>01_01.jpg"  width="296" height="296">
                                                             </a>
                                                         </div>
                                                         <div class="info">
