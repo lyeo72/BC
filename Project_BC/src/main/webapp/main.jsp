@@ -150,8 +150,8 @@
                                                     
                                                     
                                                     <%                                        
+                                                      int productCount = 0;
                                                       if(productList!=null){ 
-                                                        int productCount = 0;
                                                         if(productList.size() <4){
                                                             productCount = productList.size();
                                                         }else{
@@ -199,10 +199,6 @@
                                                     <%}
                                                         } %>
                                                     
-                                                    
-                                                    
-                                                    
-                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -225,23 +221,22 @@
                                                     
                                                     <%                                        
                                                       if(productList!=null){ 
-                                                        int productCount = 4;
-                                                        if(productList.size() <8){
+                                                        //productCount = 4;
+                                                        if(productList.size() < 8){
                                                             productCount = productList.size();
                                                         }else{
-                                                            productCount = 8;
+                                                        	productCount = 8;
                                                         }
                                                       
                                                       %>
-                                                        <%for(int i=4; i<productCount; i++){ %>
-                                                        <% 
-                                                        String productImgName = productList.get(i).getProduct_name();
-                                                        int discountPrice = (int)(productList.get(i).getProduct_price()*(100-productList.get(i).getProduct_discount())/100); 
-                                                        int price =  productList.get(i).getProduct_price();
-                                                        int discount = productList.get(i).getProduct_discount();
-                                                        int productNum = productList.get(i).getProduct_num();
-                                                        String product_name = productList.get(i).getProduct_name();
-                                                        double product_review_score = productList.get(i).getProduct_review_score(); 
+                                                        <%for(int i=4; i<productCount; i++){ 
+	                                                        String productImgName = productList.get(i).getProduct_name();
+	                                                        int discountPrice = (int)(productList.get(i).getProduct_price()*(100-productList.get(i).getProduct_discount())/100); 
+	                                                        int price =  productList.get(i).getProduct_price();
+	                                                        int discount = productList.get(i).getProduct_discount();
+	                                                        int productNum = productList.get(i).getProduct_num();
+	                                                        String product_name = productList.get(i).getProduct_name();
+	                                                        double product_review_score = productList.get(i).getProduct_review_score(); 
                                                         %>
                                                     <div class="item">
                                                         <div class="thumb">
@@ -296,13 +291,13 @@
                                                    
                                                    
                                                    
-                                                                <%                                        
+                                                      <%                                        
                                                       if(productList!=null){ 
-                                                        int productCount = 8;
+                                                        //productCount = 12;
                                                         if(productList.size() <12){
                                                             productCount = productList.size();
                                                         }else{
-                                                            productCount = 12;
+                                                        	productCount = 12;
                                                         }
                                                       
                                                       %>
@@ -373,7 +368,7 @@
 													                             
 													<%                                        
                                                       if(productList!=null){ 
-                                                        int productCount = 12;
+                                                        //productCount = 12;
                                                         if(productList.size() <16){
                                                             productCount = productList.size();
                                                         }else{

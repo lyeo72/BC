@@ -17,7 +17,7 @@ import vo.MemberBean;
 import vo.OrderBean;
 import vo.Productbean;
 import vo.ReviewBean;
-import vo.orderDetailBean;
+import vo.OrderDetailBean;
 import vo.orderProductBean;
 
 public class OrderDAO {
@@ -386,13 +386,16 @@ public class OrderDAO {
 	}
 	
 	
-	public ArrayList<orderProductBean> selectOrderProductList(int order_num) {
+	public ArrayList<OrderDetailBean> selectOrderProductList(int order_num) {
 		System.out.println("orderDAO - selectMemberInfo()!");
-		System.out.println("BasketDAO - selectCartList()");
-		ArrayList<orderProductBean> orderProductList = null;
+		ArrayList<OrderDetailBean> orderProductList = null;
 		
 		PreparedStatement pstmt = null;
+		PreparedStatement pstmt1 = null;
+		PreparedStatement pstmt2 = null;
         ResultSet rs = null;
+        ResultSet rs1 = null;
+        ResultSet rs2 = null;
 		
 		try {
 			
@@ -400,17 +403,37 @@ public class OrderDAO {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, order_num);
 			rs = pstmt.executeQuery();
-			
-			orderProductList = new ArrayList<orderProductBean>();
+			orderProductList = new ArrayList<OrderDetailBean>();
 			
 			while(rs.next()) {
-				orderProductBean orderProduct = new orderProductBean();
-				
+				OrderDetailBean orderProduct = new OrderDetailBean();
 				orderProduct.setOrder_num(rs.getInt("order_num"));
 				orderProduct.setCustomer_id(rs.getString("customer_id"));
 				orderProduct.setProduct_num(rs.getInt("product_num"));
 				orderProduct.setProduct_qty(rs.getInt("product_qty"));
-			
+				
+				sql = "SELECT * FROM product where product_num=?";
+				pstmt1 = con.prepareStatement(sql);
+				pstmt1.setInt(1, orderProduct.getProduct_num());
+				rs1 = pstmt1.executeQuery();
+				
+					if(rs1.next()) {
+						orderProduct.setProduct_name(rs.getString("product_name"));
+						orderProduct.setSeller_id(rs.getString("seller_id"));
+						orderProduct.setProduct_price(rs.getInt("product_price"));
+						orderProduct.setProduct_discount(rs.getInt("product_discount"));
+						
+						System.out.println("asdasdasdasdasdasdasdasd"+orderProduct.getSeller_id());
+						
+						sql = "SELECT * FROM seller where seller_id=?";
+						pstmt2 = con.prepareStatement(sql);
+						pstmt2.setString(1, orderProduct.getSeller_id());
+						rs2 = pstmt2.executeQuery();
+						
+						if(rs2.next()) {
+							orderProduct.setSname(rs.getString("Sname"));
+						}
+					}
 				
 				orderProductList.add(orderProduct);
 			}
@@ -421,8 +444,13 @@ public class OrderDAO {
 			System.out.println("selectCartList() 오류 - " + e.getMessage());
 		} finally {
         	// 자원 반환
-        	close(rs);
+			close(rs2);
+			close(rs1);
+			close(rs);
+            close(pstmt2);
+            close(pstmt1);
             close(pstmt);
+            
         }
 		
 		
@@ -430,9 +458,9 @@ public class OrderDAO {
 	}
 	
 	//오더넘과 일치하는 프로덕트 넘들의 정보를 출력하는 메소드
-	public orderDetailBean selectProduct(int product_num) {
+	public OrderDetailBean selectProduct(int product_num) {
 		System.out.println("orderDAO - selectProduct()!");
-		orderDetailBean orderDetail = null;
+		OrderDetailBean orderDetail = null;
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -444,7 +472,7 @@ public class OrderDAO {
 			
 			rs = pstmt.executeQuery();
 			
-			orderDetail = new orderDetailBean();
+			orderDetail = new OrderDetailBean();
 			
 			while(rs.next()) {
 				orderDetail.setProduct_num(rs.getInt("product_num"));
