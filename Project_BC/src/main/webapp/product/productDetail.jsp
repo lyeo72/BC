@@ -167,15 +167,12 @@
 							
 							<div class="indi">
 								<ul class="page">
-								<%for(int i=0;i<productImg.size();i++){
-                                       if(productImg.get(i).getProduct_img_location()==1){
-                                   
-                                    %>
+								<%for(int i = 0; i < productImg.size(); i++){
+                                       if(productImg.get(i).getProduct_img_location() == 1){%>
 									<li class="on"><a href="#gd_img_bx">
-									<img src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.png" width="100" height="100" alt="<%=productImg.get(i).getProduct_original_img() %>" onclick="ChangeImg()"/>
-									
-									
-									<em class="ir"><%=article.getProduct_name()+i %></em></a></li>
+										<img src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.png" width="100" height="100" alt="<%=productImg.get(i).getProduct_original_img() %>" onclick="ChangeImg()"/>
+										<em class="ir"><%=article.getProduct_name()+i %></em></a>
+									</li>
 									<%} 
                                     }%>
 								</ul>
@@ -243,7 +240,7 @@
 								<dt>배송안내</dt>
 								<dd class="drv">
 									<div></div>
-									<span><em><b style="color:#fe7600;">일반택배</b></em> 전국 (제주/도서산간 제외)<br>10월 12일(화)부터 도착 가능</span>
+									<span><em><b style="color:#fe7600;">일반택배</b></em> 전국 (제주/도서산간 제외)<br>주문일로부터 2 ~ 5일이 소요됩니다.</span>
 								</dd>
 							</dl>
 							<dl>
@@ -280,15 +277,6 @@
 					<!-- //GOODS INFO -->
 				</div>
 				<!-- GOODS VIEW -->
-		
-
-				<script type="text/javascript">
-					$(document).ready(function() {
-						fade_slide('gd_rel1', 0, false, 'click', false, false, 0);
-					});
-				</script>
-				<!-- //GOODS RELATION -->
-		
 
 				<!-- GOODS CONTENT -->
 				<!-- TAB1 -->
@@ -306,15 +294,9 @@
 					<h3 class="ir">제품 상세정보</h3>
 					<div class="gd_detail">
 						<div align="center">
-						
-						<%for(int i = 0; i < productDtlImg.size(); i++){%>
-   
-							<img alt="" src="${pageContext.request.contextPath}/img/<%=productDtlImg.get(i).getProduct_img()%>.png"/>
-							
-						<%}%>
-    
-   
-							
+							<%for(int i = 0; i < productDtlImg.size(); i++){%>
+								<img alt="" src="${pageContext.request.contextPath}/img/<%=productDtlImg.get(i).getProduct_img()%>.png"/>
+							<%}%>
 						</div>
 					</div>
 					<!-- DETAIL -->
@@ -368,11 +350,9 @@
 					
 				</div>
 				<!-- //TAB2 -->
-				
 		
 			<!-- 리뷰가 에이젝스로 연동될 공간 -->
-			<div id="reviewArea">
-			</div>
+			<div id="reviewArea"></div>
 		
 			<!-- TAB4 -->
 			<div class="gds_cont" id="gds_cont4">
@@ -392,11 +372,9 @@
 								<span class="no_bg">집밥선생은 신선하고 안전한 배송을 위해 박스, 보냉제, 완충제 등 기본 포장비가 발생되어 10,000원 이상부터 주문하실 수 있어요</span>
 							</li>
 							<li>쿠폰 적용 후 최종 결제 금액에 30,000원인 경우 무료로 배송해드려요
-								<span class="no_bg">30,000원 미만인 경우 새벽배송은 2,900원, 일반택배(업체배송 포함) 2,500원의 배송비가 추가됩니다.</span>
+								<span class="no_bg">30,000원 미만인 경우 2,500원의 배송비가 추가됩니다.</span>
 							</li>
 							<li>원하는 배송일은 최대 2주 이내까지 선택할 수 있어요
-								<span class="no_bg">새벽배송은 선택하신 희망 배송일 전일 밤부터 당일 새벽까지 도착해요.</span>
-								<span class="no_bg">일반택배는 선택하신 희망 배송일 내 도착해요.</span>
 								<span class="no_bg bold">※ 업체배송은 배송조회 기능을 제공하지 않고 있어요. 업체에서 배송 관련 문자를 발송하고 있어요.</span>
 							</li>
 						</ul>

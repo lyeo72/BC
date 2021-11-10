@@ -69,10 +69,14 @@ public class CartAddAction implements Action {
 					 forward = new ActionForward();
 					 forward.setPath("Cart.ca");
 					 forward.setRedirect(true);
-					 
 				 }
+				 
+			 } else {
+				 forward = new ActionForward();
+				 forward.setPath("Cart.ca");
+				 forward.setRedirect(true);
+				 
 			 }
-			 
 			
 		}
         
