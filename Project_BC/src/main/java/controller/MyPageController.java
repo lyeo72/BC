@@ -18,6 +18,8 @@ import action.memberAction.MyPageModifyAction;
 import action.memberAction.MypageModifyProAction;
 import action.memberAction.OrderCheckAction;
 import action.memberAction.ShowAddressAction;
+import action.reviewAction.MyDoneReviewAction;
+import action.reviewAction.MyYetReviewListAction;
 import vo.ActionForward;
 
 
@@ -106,11 +108,23 @@ public class MyPageController extends HttpServlet {
 				forward = new ActionForward();
 				forward.setPath("/myPage/myReview.jsp");
 			}else if(command.equals("/Review1.my")) {
-				forward = new ActionForward();
-				forward.setPath("/review/myReviewpage1.jsp");
+				action = new MyYetReviewListAction();
+                try {
+                    forward = action.execute(request, response);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+				
 			}else if(command.equals("/Review2.my")) {
-				forward = new ActionForward();
-				forward.setPath("/review/myReviewpage2.jsp");
+				action = new MyDoneReviewAction();
+                try {
+                    forward = action.execute(request, response);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+				
 			}else if(command.equals("/myPage/AddAddress.my")) {
 				action = new AddAddressAction();
 				try {

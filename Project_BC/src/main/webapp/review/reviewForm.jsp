@@ -3,8 +3,7 @@
 <%
 	int product_num = Integer.parseInt(request.getParameter("product_num"));
 	int order_num = Integer.parseInt(request.getParameter("order_num"));
-
-
+	String product_name = request.getParameter("product_name");
 %>
 <!DOCTYPE html>
 <html>
@@ -27,8 +26,6 @@
 <script src="<%=request.getContextPath() %>/js/jquery-3.6.0.js"></script>
 
 <script type="text/javascript">
-
-
 $(document).ready(function() {
 	$('.starRev span').click(function(){
 	  $(this).parent().children('span').removeClass('on');
@@ -39,13 +36,10 @@ $(document).ready(function() {
 	
 	
 });
-
 function setStar(point) {
 	document.submitForm.review_score.value = point;
 	
 }
-
-
 </script>
 <link href="../CSS/common.css" rel="stylesheet" type="text/css">
 <link href="../CSS/pc-main-common.css" rel="stylesheet" type="text/css">
@@ -86,9 +80,6 @@ function setStar(point) {
 	
 	
 }else{
-
-
-
 %>
 
 
@@ -110,11 +101,11 @@ function setStar(point) {
 		<button class="button_close" type="button" onclick="self.close();"><span class="blind">팝업닫기</span><span class="ir"></span></button>
 		<div class="selected_info v2">
 			<div class="selected_img">
-				<img src="//cdn.thebanchan.co.kr/upload/C00001/goods/prd/510/764/200721000025764.jpg" width="110" height="110" alt="음식 설명" onerror="this.onerror=null;this.src='//img.ssgcdn.com/trans.ssg?src=/ui/ssg/img/common/img_ready_500x500.jpg&w=110&h=110&t=269231888f4d2e45b39cf84c3551eb7dd68372a7'">
+				<img src="${pageContext.request.contextPath}/img/<%=product_name%>01_01.png" width="110" height="110" alt="음식 설명" onerror="this.onerror=null;this.src='//img.ssgcdn.com/trans.ssg?src=/ui/ssg/img/common/img_ready_500x500.jpg&w=110&h=110&t=269231888f4d2e45b39cf84c3551eb7dd68372a7'">
 			</div>
 			<div class="item_info">
 				
-				<p class="item">양장피</p>
+				<p class="item"><%=product_name %></p>
 				<span class="desc">
 					</span>
 				</div>

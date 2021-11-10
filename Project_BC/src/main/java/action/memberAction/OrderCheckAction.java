@@ -19,7 +19,7 @@ public class OrderCheckAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-			System.out.println("OrderCheckAction");
+		System.out.println("OrderCheckAction");
         
         ActionForward forward = null;
         
