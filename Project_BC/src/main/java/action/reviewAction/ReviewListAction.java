@@ -20,10 +20,6 @@ public class ReviewListAction implements Action {
 		System.out.println("ReviewListAction");
 		ActionForward forward = null;
 		
-		String arrange = request.getParameter("arrange");
-		System.out.println("arrange:"+arrange);
-		
-		
 		
 		//페이징 처리를 위한 변수 선언
 		int page = 1;//현재 체이지 번호를 저장할 변수(기본값1)

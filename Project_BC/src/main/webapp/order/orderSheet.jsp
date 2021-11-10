@@ -228,9 +228,9 @@ function payMethod(method) {
 							<span class="tx"> 
 								<strong><%=cartList.get(i).getProduct_name()%></strong>
 							</span> 
-							<span class="img"><a href="${pageContext.request.contextPath}/upload/<%=cartList.get(i).getProduct_img()%>">
-									<img src="${pageContext.request.contextPath}/upload/<%=cartList.get(i).getProduct_img()%>.png" width="80" height="80" alt="더반찬& 양념소불고기 2개 (고추장불고기, 쌈채소증정)" onerror="this.src='/common/images/common/noimg_100.jpg'"/> 
-							</a>
+							<span class="img">
+									<img src="${pageContext.request.contextPath}/img/<%=cartList.get(i).getProduct_img()%>.png" width="80" height="80" alt="더반찬& 양념소불고기 2개 (고추장불고기, 쌈채소증정)" onerror="this.src='/common/images/common/noimg_100.jpg'"/> 
+							
 							</span>
 						</td>
 						
