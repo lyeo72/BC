@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+/* @font-face{ */
+/*     font-family:'SFPro'; */
+/*     font-style:normal; */
+/*     font-weight:400; */
+/*     src:url("../../asset/fonts/FontsFree-Net-SFProDisplay-Regular.ttf") format("truetype"), */
+/*     url("../../asset/fonts/FontsFree-Net-SFProDisplay-Regular.woff")  format("woff") */
+/* } */
+/* @font-face{ */
+/*     font-family:'SFPro'; */
+/*     font-style:normal; */
+/*     font-weight:600; */
+/*     src:url("../../asset/fonts/FontsFree-Net-SFProDisplay-Semibold.ttf") format("truetype"), */
+/*     url("../../asset/fonts/FontsFree-Net-SFProDisplay-Semibold.woff")  format("woff") */
+/* } */
+/* @font-face{ */
+/*    font-family:'Audi'; */
+/*    font-style:normal; */
+/*    font-weight:800; */
+/*    src:url("../../asset/fonts/AudiTypeScreen-Bold.woff2") format("woff2"), */
+/*    url("../../asset/fonts/AudiTypeScreen-Bold.woff") format("woff") */
+/* } */
+
+/* @font-face{ */
+/* 	font-family:"Noto"; */
+/* 	font-style:normal; */
+/* 	font-weight:400; */
+/* 	src:local("NotoSansKR-Light"), */
+/* 	url("../../asset/fonts/NotoSansKR-Light.woff2") format("woff2"), */
+/* 	url("../../asset/fonts/NotoSansKR-Light.woff") format("woff"), */
+/* 	url("../../asset/fonts/NotoSansKR-Light.otf") format("opentype"); */
+/* } */
+
+/* @font-face{ */
+/* 	font-family:"Noto"; */
+/* 	font-style:normal; */
+/* 	font-weight:500; */
+/* 	src:local("NotoSansKR-Regular"), */
+/* 	url("../../asset/fonts/NotoSansKR-Regular.woff2") format("woff2"), */
+/* 	url("../../asset/fonts/NotoSansKR-Regular.woff") format("woff"), */
+/* 	url("../../asset/fonts/NotoSansKR-Regular.otf") format("opentype"); */
+/* } */
+
+/* @font-face{ */
+/* 	font-family:"Noto"; */
+/* 	font-style:normal; */
+/* 	font-weight:600; */
+/* 	src:local("NotoSansKR-Medium"), */
+/* 	url("../../asset/fonts/NotoSansKR-Medium.woff2") format("woff2"), */
+/* 	url("../../asset/fonts/NotoSansKR-Medium.woff") format("woff"), */
+/* 	url("../../asset/fonts/NotoSansKR-Medium.otf") format("opentype"); */
+/* } */
+
+/* @font-face{ */
+/* 	font-family:"Noto"; */
+/* 	font-style:normal; */
+/* 	font-weight:700; */
+/* 	src:local("NotoSansKR-Bold"), */
+/* 	url("../../asset/fonts/NotoSansKR-Bold.woff2") format("woff2"), */
+/* 	url("../../asset/fonts/NotoSansKR-Bold.woff") format("woff"), */
+/* 	url("../../asset/fonts/NotoSansKR-Bold.otf") format("opentype"); */
+/* } */
+
