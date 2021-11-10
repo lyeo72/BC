@@ -364,6 +364,7 @@ public class OrderDAO {
 				order.setShipping_phone(rs.getString("shipping_phone"));
 				order.setShipping_zonecode(rs.getString("shipping_zonecode"));
 				order.setShipping_address(rs.getString("shipping_address"));
+				order.setShipping_memo(rs.getString("shipping_memo"));
 				order.setOrder_price(rs.getInt("order_price"));
 				order.setPay_method(rs.getString("pay_method"));
 				order.setOrder_date(rs.getTimestamp("order_date"));
@@ -517,5 +518,3 @@ public class OrderDAO {
 	
 
 }
-
-

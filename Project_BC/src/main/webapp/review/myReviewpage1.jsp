@@ -7,7 +7,7 @@
     ArrayList<Productbean> orderList = (ArrayList<Productbean>)request.getAttribute("orderList");
 %>
 
-<div id="evalListBodydiv" style="width: 100px; height: 100px;">
+<div id="evalListBodydiv" style="width: 500px;">
 	<%
 	if(orderList != null) {
 	%>
@@ -23,23 +23,19 @@
 					<th>
 						상품이름
 					</th>
-					<th>	
-						별점
-					</th>
+					
 				</tr>
 				<%
 				for(int i = 0; i < orderList.size(); i++) {
 				%>
-				<tr onclick="location.href = ReviewForm.re?product_num=<%=orderList.get(i).getProduct_num()%>">
-					<td>
-						<img alt="" src="">
+				<tr onclick="location.href = 'ReviewForm.re?product_num=<%=orderList.get(i).getProduct_num()%>&product_name=<%=orderList.get(i).getProduct_name() %>&order_num=<%=orderList.get(i).getProduct_price()%>'">
+					<td >
+						<img alt="" src="${pageContext.request.contextPath}/upload/<%=orderList.get(i).getProduct_name()%>01_01.png" width="110" height="110">
 					</td>
 					<td>
 						<span class="user"><%=orderList.get(i).getProduct_name() %></span>
 					</td>
-					<td>	
-						<span class="user"><%=orderList.get(i).getProduct_review_score()%>점</span>
-					</td>
+					
 				</tr>
 			<% } %>
 			</table>

@@ -27,7 +27,7 @@ public class MyDoneReviewAction implements Action {
         request.setAttribute("reviewList", reviewList);
         
         forward = new ActionForward();
-        forward.setPath("/myPage/myReviewpage2.jsp");
+        forward.setPath("/review/myReviewpage2.jsp");
         forward.setRedirect(false);
         
         return forward;

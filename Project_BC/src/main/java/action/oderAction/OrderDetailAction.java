@@ -47,7 +47,7 @@ public class OrderDetailAction implements Action {
 		
 		ArrayList<OrderBean> orderList = new ArrayList<OrderBean>();
 		orderList = orderListService.getSelectOrder(order_num);
-		
+		System.out.println("메모"+orderList.get(0).getShipping_memo());
 		
 		request.setAttribute("orderList", orderList);
 		

@@ -54,7 +54,6 @@ public class OrderProAction implements Action {
 		order.setOrder_price(Integer.parseInt(request.getParameter("paid_amount")));
 		order.setTrans_num("운송장 번호");
 		
-		
 		OrderProService orderService = new OrderProService();
 		
 		

@@ -28,13 +28,10 @@ public class ReviewWriteProAction implements Action {
 
 		String customer_id = (String)session.getAttribute("sId");  
 		
-		int order_num = 7;
-
-				
-//				Integer.parseInt(request.getParameter("order_num"));
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
+		
 		if(customer_id == null) {
 			out.println("<script>");
 			out.println("alert('로그인이 필요합니다.')");
@@ -64,6 +61,7 @@ public class ReviewWriteProAction implements Action {
 		);
 		
 		ReviewBean review = new ReviewBean();
+		int order_num = Integer.parseInt(multi.getParameter("order_num"));
 		
 		review.setProduct_num(Integer.parseInt(multi.getParameter("product_num"))); 
 		review.setReview_id(multi.getParameter("review_id")); 
@@ -97,8 +95,8 @@ public class ReviewWriteProAction implements Action {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out1 = response.getWriter();
 			out1.println("<script>");
-			out1.println("alert('게시물 등록 실패!')");
-			out1.println("history.back()");
+			out1.println("alert('이미 리뷰를 작성한 제품입니다!')");
+			out1.println("location.href='Review.my'");
 			out1.println("</script>");
 		}else {
 			

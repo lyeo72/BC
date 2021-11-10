@@ -210,7 +210,7 @@ ArrayList<orderProductBean> orderProductList = (ArrayList<orderProductBean>)requ
 							
 							<tr>
 								<th scope="row"> 요청사항 (50자)</th>
-								<td><span class="tx"><%if(orderList.get(0).getShipping_memo() =="null"){} %></span></td>
+								<td><span class="tx"><%if(orderList.get(0).getShipping_memo() =="null"){}else{%> <%=orderList.get(0).getShipping_memo()%><%} %></span></td>
 							</tr>
 							
 						</tbody>

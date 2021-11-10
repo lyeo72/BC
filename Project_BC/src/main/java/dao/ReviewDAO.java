@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 import vo.Productbean;
 import vo.ReviewBean;
-import vo.orderProductBean;
 
 public class ReviewDAO {
 	private ReviewDAO() {
@@ -336,6 +335,7 @@ public class ReviewDAO {
 
 				review.setProduct_num(rs.getInt("product_num"));
 				review.setReview_idx(rs.getInt("review_idx"));
+				review.setReview_date(rs.getDate("review_date"));
 				review.setReview_content(rs.getString("review_content"));
 				review.setReview_score(rs.getDouble("review_score"));
 
@@ -365,7 +365,7 @@ public class ReviewDAO {
 
 		try {
 
-			String sql = "SELECT * FROM order_product WHERE customer_id=?AND product_check=? ";
+			String sql = "SELECT * FROM order_product WHERE customer_id=? AND product_check=? ";
 			pstmt = con.prepareStatement(sql);
 
 			pstmt.setString(1, id);// 페이지당 게시물 수
@@ -374,18 +374,18 @@ public class ReviewDAO {
 			rs = pstmt.executeQuery();
 			
 			orderList = new ArrayList<Productbean>();
+			Productbean product = new Productbean();
 
 			while (rs.next()) {
-				Productbean product = new Productbean();
-
+				
 				product.setProduct_num(rs.getInt("product_num"));
+				product.setProduct_price(rs.getInt("order_num"));
 				
 				sql = "SELECT * FROM product WHERE product_num=?";
 				pstmt2 = con.prepareStatement(sql);
 				pstmt2.setInt(1, product.getProduct_num());
 				
 				rs2 = pstmt2.executeQuery();
-				
 				if(rs2.next()) {
 					
 					product.setProduct_name(rs2.getString("product_name"));

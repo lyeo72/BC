@@ -6,7 +6,7 @@
 	
 %>
 
-<div id="evalListBodydiv">
+<div id="evalListBodydiv" style="width: 500px;">
 	<%
 	if(reviewList != null) {
 	%>
@@ -21,7 +21,6 @@
 						<dt>
 							<span class="pho"><img src="<%if(reviewList.get(i).getReview_img()!=null){ %>//www.thebanchan.co.kr/fo/images/gds/ico_picture.png<% }%>" width="18" height="14" ></span>
 							<span class="star_rate05"><b class="ir"><%=reviewList.get(i).getReview_score() %></b><em style="width:<%=reviewList.get(i).getReview_score()/5*100 %>%;"><%=reviewList.get(i).getReview_score() %></em></span>
-							<span class="user"><%=reviewList.get(i).getReview_id() %></span>
 							<span class="date"><%=reviewList.get(i).getReview_date()%></span>
 						</dt>
 						<dd class="off">
