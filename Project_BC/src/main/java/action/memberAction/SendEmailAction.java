@@ -62,7 +62,7 @@ public class SendEmailAction implements Action {
 			// 전송할 메일에 대한 정보 생성
 			// 1. 발신자 정보 설정(발신자 주소, 발신자 주소와 함께 표시될 이름)
 			//    => 단, 스팸메일 정책으로 인해 상용 메일 사이트는 발신자 주소 변경 불가능
-			Address sender_address = new InternetAddress("kbm9051@gmail.com", "[더 반찬]");
+			Address sender_address = new InternetAddress("kbm9051@gmail.com", "[집밥 선생]");
 			// 2. 수신자 정보 설정(수신자 주소)
 			Address receiver_address = new InternetAddress(email);
 			// 3. Message 객체를 통해 정보 생성 
@@ -73,7 +73,7 @@ public class SendEmailAction implements Action {
 			// 3) 수신자 정보 설정
 			message.addRecipient(Message.RecipientType.TO, receiver_address);
 			// 4) 메일 제목 설정
-			message.setSubject("[더 반찬] 인증메일 입니다");
+			message.setSubject("[집밥 선생] 인증메일 입니다");
 			// 5) 메일 본문 설정
 			message.setContent("인증번호는  " + randCode + " 입니다", "text/html;charset=UTF-8");
 			// 6) 메일 전송 날짜 정보 설정
