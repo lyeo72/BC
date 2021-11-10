@@ -7,6 +7,9 @@
 <%
 	BoardBean article = (BoardBean)request.getAttribute("article");
     ArrayList<ProductImg> productImg = (ArrayList<ProductImg>)request.getAttribute("productImg");
+    if(productImg==null){
+    	productImg = new ArrayList();
+    }
 // 	ArrayList<ProductImg> productDtlImg = (ArrayList<ProductImg>)request.getAttribute("productDtlImg");
 	String id = (String)session.getAttribute("sId");
 	int price = (Integer)article.getProduct_price() * (100 - article.getProduct_discount())/100;
@@ -158,7 +161,7 @@
 						<div class="gd_img_bx">
 							 <div class="fade_slide gd_img" >
 								<ul class="cont">							
-									<li class="active" id="tumnail" style="background-image:url('${pageContext.request.contextPath}/img/<%= productImg.get(0).getProduct_img()%>.png">	
+									<li class="active" id="tumnail" style="background-image:url('${pageContext.request.contextPath}/img/<%= article.getProduct_name()%>01_01.jpg')">	
 									<span class="ir"><%=article.getProduct_name()%> </span></li>
 									
 									
@@ -187,7 +190,7 @@
 						<!-- BRAND -->
 						<div class="gd_brd">	
 							<dl>
-								<dt><%=article.getSname() %></dt>
+								<dt><%=article.getSname()%></dt>
 							</dl>
 						</div>
 						<!-- NAME -->
@@ -201,7 +204,7 @@
 								<div class="g_scr">
 									<span class="star_rate03"><b class="ir">평점</b>
 									<em style="width:<%=starRate %>%;"><%=avgScore %></em></span>
-									<span class="scr"><b><%=article.getProduct_review_score() %></b></span>
+									<span class="scr"><b><%=((double)((int)(article.getProduct_review_score()*10)))/10 %></b></span>
 									<a href="#gds_cont3" class="rv">(고객후기 <%=reviewCount %>건)</a>
 								</div>
 							<%}%>
@@ -297,7 +300,6 @@
 							<%for(int i = 0; i < productImg.size(); i++){
 									if(productImg.get(i).getProduct_img_location() == 2){
 							%>
-							 
 								<img alt="" src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.jpg"/>
 							<%}
 							}%>

@@ -176,6 +176,8 @@ public class BoardDAO {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		PreparedStatement pstmt1 = null;
+		ResultSet rs1 = null;
 
 		try {
 			con = getConnection();
@@ -206,6 +208,16 @@ public class BoardDAO {
 				article.setProduct_handling(rs.getString("product_handling"));
 				article.setProduct_material(rs.getString("product_material"));
 				article.setProduct_review_score(rs.getDouble("product_review_score"));
+				
+				sql = "SELECT * FROM seller WHERE seller_id=?";
+				pstmt1 = con.prepareStatement(sql);
+				pstmt1.setString(1, article.getSeller_id());
+				
+				rs1 = pstmt1.executeQuery();
+				if(rs1.next()) {
+					article.setSname(rs1.getString("Sname"));
+				}
+				
 			}
 
 		} catch (Exception e) {

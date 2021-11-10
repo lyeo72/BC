@@ -53,7 +53,7 @@ public class MemberDAO {
 
 			close(pstmt);
 
-			sql = "INSERT INTO customer VALUES(?,?,?,0,?)";
+			sql = "INSERT INTO customer VALUES(?,?,?,0,?,1)";
 			pstmt = con.prepareStatement(sql);
 
 			pstmt.setString(1, cBean.getCustomer_id());
@@ -116,7 +116,7 @@ public class MemberDAO {
 
 			close(pstmt);
 
-			sql = "INSERT INTO seller VALUES(?,?,?,?,?,?,?,?,0)";
+			sql = "INSERT INTO seller VALUES(?,?,?,?,?,?,?,?,0,1)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, sBean.getSeller_id());
 			pstmt.setInt(2, sBean.getsNO());

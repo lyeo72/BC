@@ -30,7 +30,7 @@
 				%>
 				<tr onclick="location.href = 'ReviewForm.re?product_num=<%=orderList.get(i).getProduct_num()%>&product_name=<%=orderList.get(i).getProduct_name() %>&order_num=<%=orderList.get(i).getProduct_price()%>'">
 					<td >
-						<img alt="" src="${pageContext.request.contextPath}/upload/<%=orderList.get(i).getProduct_name()%>01_01.png" width="110" height="110">
+						<img alt="" src="${pageContext.request.contextPath}/img/<%=orderList.get(i).getProduct_name()%>01_01.jpg" width="110" height="110">
 					</td>
 					<td>
 						<span class="user"><%=orderList.get(i).getProduct_name() %></span>
