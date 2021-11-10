@@ -133,6 +133,7 @@ function payMethod(method) {
 
 </head>
 <body>
+<%@ include file="/inc/top.jsp" %>
 <!-- ACCESSIBILITY -->
 <!-- <form action="Payment.or" method="post" > -->
 <form action="Payment.or" method="post" >
@@ -484,7 +485,7 @@ function payMethod(method) {
 </div>
 </form>
 
-
+<jsp:include page="../inc/bottom.jsp"/>
 
 </body>
 </html>
