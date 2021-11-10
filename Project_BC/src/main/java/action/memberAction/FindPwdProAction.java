@@ -40,8 +40,6 @@ public class FindPwdProAction implements Action {
 		FindCustomerInfoService customerService = new FindCustomerInfoService();
 		FindSellerInfoService sellerService = new FindSellerInfoService();	
 		
-		
-
 		FindIdProService GradeService = new FindIdProService();
 		findGrade = GradeService.FindGrade(name);
 		

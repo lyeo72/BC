@@ -42,7 +42,6 @@ public class MemberLoginProAction implements Action {
 			grade = service.autoLoginFindGrade(login_id);
 			
 		} 
-
 		
 		if(!isLoginSuccess) {
 			response.setContentType("text/html; charset=UTF-8");

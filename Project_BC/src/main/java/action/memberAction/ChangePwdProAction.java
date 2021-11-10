@@ -23,7 +23,6 @@ public class ChangePwdProAction implements Action {
 		
 		System.out.println(id);
 		
-		
 		changeSuccess = service.changePwd(id,newPwd);
 		
 		

@@ -24,9 +24,7 @@ function openWindow(target) {
 				document.fr.address.value = zonecode + ", " + roadAddress;
 	        }
 	    }).open();
-	}
-	
-	
+	}	
 	
 	
 	if(document.fr.member_id.value != null){

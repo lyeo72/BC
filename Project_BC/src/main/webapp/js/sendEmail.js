@@ -66,24 +66,24 @@ function checkSubmit() {
    var cRpw = document.fr.member_repass.value;
    
    
-//   if(checkIdResult == false) { 
-//         alert('아이디를 입력해주세요');
-//         document.fr.member_id.focus();
-//         return false;
-//   } else if(checkPasswdResult == false) { 
-//         alert('비밀번호는 영문자,숫자,특수문자를 3종류 이상을 조합하여 만들어주세요');
-//         document.fr.member_pass.focus();
-//         return false;
-//   } else if(cPw != cRpw){
-//         alert('비밀번호가 일치하지 않습니다');
-//         document.fr.member_repass.focus();
-//         return false;
-//   
-//   }else if(codeCheck == false){
-//      alert('인증번호가 올바르지 않습니다.')
-//      document.fr.email.focus();
-//      return false;
-//   }
+   if(checkIdResult == false) { 
+         alert('아이디를 입력해주세요');
+         document.fr.member_id.focus();
+         return false;
+   } else if(checkPasswdResult == false) { 
+         alert('비밀번호는 영문자,숫자,특수문자를 3종류 이상을 조합하여 만들어주세요');
+         document.fr.member_pass.focus();
+         return false;
+   } else if(cPw != cRpw){
+         alert('비밀번호가 일치하지 않습니다');
+         document.fr.member_repass.focus();
+         return false;
+   
+   }else if(codeCheck == false){
+      alert('인증번호가 올바르지 않습니다.')
+      document.fr.email.focus();
+      return false;
+   }
    
    if(!document.fr.add_info1.checked){
    alert('필수항목에 체크해주세요!')
@@ -101,7 +101,3 @@ function checkSubmit() {
    
    return true;
 }
-
-
-
-

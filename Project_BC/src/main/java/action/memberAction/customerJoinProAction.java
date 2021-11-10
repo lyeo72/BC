@@ -32,6 +32,7 @@ public class customerJoinProAction implements Action {
 
 		System.out.println(name + "action");
 	
+		
 		CustomerBean cBean = new CustomerBean();
 		cBean.setId(id);
 		cBean.setPassword(password);

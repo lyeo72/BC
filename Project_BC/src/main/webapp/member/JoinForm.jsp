@@ -25,6 +25,7 @@
           <span class="btns_sys red_big_d"><span>회원가입</span></span>
         </div>
       </a>
+      
       <a href="SellerJoinForm.me">
         <img src="img/company.ico">
         <div class="member_gate_join">

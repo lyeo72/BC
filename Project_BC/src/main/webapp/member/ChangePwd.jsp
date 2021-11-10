@@ -125,7 +125,6 @@ $('.target_id').text(param);
 }); 
 
 
-
 </script>
 <link href="CSS/mem.css" rel="stylesheet" type="text/css">
 <link href="CSS/common.css" rel="stylesheet" type="text/css">
@@ -134,7 +133,7 @@ $('.target_id').text(param);
 <link href="CSS/font.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	 <jsp:include page="/inc/top.jsp" />
+ <jsp:include page="/inc/top.jsp" />
 <div class="content" style="padding-top: 269px;">
 	<!-- WRAP -->
 	<div class="wrap mem">

@@ -41,6 +41,7 @@
 				<dt><a href="#">Home</a></dt>
 				<dd><a href="#">신규 회원가입</a></dd>
 			</dl>
+			
 	<form action="CustomerJoinPro.me" name="fr" id="joinForm" method="post" autocomplete="off" onsubmit="return checkSubmit()">			
 		<input type="hidden" name="grade" value="3">
 			<!--// LOCATION SELECT -->
