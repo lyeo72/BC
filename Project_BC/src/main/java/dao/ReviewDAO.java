@@ -245,18 +245,26 @@ public class ReviewDAO {
 			String sql = "select product_check from order_product where order_num =? and product_num=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, order_num);
+			System.out.println(order_num);
 			pstmt.setInt(2, review.getProduct_num());
 
 			rs = pstmt.executeQuery();
-
 			if (rs.next()) {
+				
+				if((rs.getInt("product_check"))==0) {
 				sql = "UPDATE order_product set product_check=? where order_num =? and product_num=?";
-				System.out.println("update쿼리 실핵!");
+				System.out.println("리뷰 작성 시 product_check를 1로 바꾸는 업데이트 실행!");
 				pstmt2 = con.prepareStatement(sql);
+				
 				pstmt2.setInt(1, 1);
 				pstmt2.setInt(2, order_num);
 				pstmt2.setInt(3, review.getProduct_num());
 				updateReviewStatus = pstmt2.executeUpdate();
+				
+				}else if((rs.getInt("product_check"))==1){
+					
+					updateReviewStatus=0;
+				}
 			}
 
 		} catch (Exception e) {
@@ -266,7 +274,10 @@ public class ReviewDAO {
 
 			close(rs);
 			close(pstmt);
-			close(pstmt2);
+			
+			if(pstmt2!=null) {
+				close(pstmt2);
+			}
 
 		}
 
@@ -354,8 +365,7 @@ public class ReviewDAO {
 
 		try {
 
-			String sql = "SELECT * FROM order_product WHERE customer_id=?AND product_check=? "
-					+ "ORDER BY review_idx";
+			String sql = "SELECT * FROM order_product WHERE customer_id=?AND product_check=? ";
 			pstmt = con.prepareStatement(sql);
 
 			pstmt.setString(1, id);// 페이지당 게시물 수
@@ -378,8 +388,8 @@ public class ReviewDAO {
 				
 				if(rs2.next()) {
 					
-					product.setProduct_name(rs.getString("product_name"));
-					product.setProduct_review_score(rs.getInt("product_review_score"));
+					product.setProduct_name(rs2.getString("product_name"));
+					product.setProduct_review_score(rs2.getInt("product_review_score"));
 					
 				}
 				orderList.add(product);
@@ -391,6 +401,8 @@ public class ReviewDAO {
 		} finally {
 			close(rs);
 			close(pstmt);
+			close(rs2);
+			close(pstmt2);
 		}
 
 		return orderList;

@@ -2,8 +2,8 @@
 <%@page import="vo.orderDetailBean"%>
 <%@page import="vo.OrderBean"%>
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 ArrayList<OrderBean> orderList = (ArrayList<OrderBean>)request.getAttribute("orderList");
 ArrayList<orderDetailBean> orderDetailList = (ArrayList<orderDetailBean>)request.getAttribute("orderDetailList");
@@ -103,7 +103,7 @@ ArrayList<orderProductBean> orderProductList = (ArrayList<orderProductBean>)requ
 									</a>
 									
 									
-										<span class="cnt"><b class="qt">1</b>개 / <b class="pr"><%=orderDetailList.get(i).getProduct_price()%></b>원 </span>
+										<span class="cnt"><b class="qt"><%=orderProductList.get(i).getProduct_qty() %></b>개 / <b class="pr"><fmt:formatNumber value="<%=orderDetailList.get(i).getProduct_price()-(orderDetailList.get(i).getProduct_price()*orderDetailList.get(i).getProduct_discount()*0.01)%>" pattern="#,###"/></b>원 </span>
 									
 								</td>
 								

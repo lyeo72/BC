@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
 <%
 	int product_num = Integer.parseInt(request.getParameter("product_num"));
+	int order_num = Integer.parseInt(request.getParameter("order_num"));
+
+
 %>
 <!DOCTYPE html>
 <html>
@@ -24,6 +27,8 @@
 <script src="<%=request.getContextPath() %>/js/jquery-3.6.0.js"></script>
 
 <script type="text/javascript">
+
+
 $(document).ready(function() {
 	$('.starRev span').click(function(){
 	  $(this).parent().children('span').removeClass('on');
@@ -96,6 +101,7 @@ function setStar(point) {
 	
 	<input type="hidden" name="review_id" value="<%=customer_id%>"/>
 
+	<input type="hidden" name="order_num" id="order_num" value="<%=order_num%>"/>
 	<input type="hidden" name="product_num" value="<%=product_num%>"/>
 	<input type="hidden" name="review_score" value=""/>
 	
@@ -122,11 +128,11 @@ function setStar(point) {
 				<div class="review_star v2">
 					<span class="blind">평점 5점 중 </span>
 					<div class="starRev">
-					  <span class="starR on" onclick="setStar(1)">별1</span>
-					  <span class="starR on" onclick="setStar(2)">별2</span>
-					  <span class="starR on" onclick="setStar(3)">별3</span>
-					  <span class="starR on" onclick="setStar(4)">별4</span>
-					  <span class="starR on" onclick="setStar(5)">별5</span>
+					  <span class="starR " onclick="setStar(1)">별1</span>
+					  <span class="starR " onclick="setStar(2)">별2</span>
+					  <span class="starR " onclick="setStar(3)">별3</span>
+					  <span class="starR " onclick="setStar(4)">별4</span>
+					  <span class="starR " onclick="setStar(5)">별5</span>
 					  
 					</div>
 					

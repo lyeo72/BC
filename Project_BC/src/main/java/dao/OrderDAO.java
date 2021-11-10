@@ -139,7 +139,7 @@ public class OrderDAO {
 			
 			customerInfo = new ArrayList<CustomerInfo>();
 			
-			while(rs.next()) {
+			if(rs.next()) {
 			      // BoardBean 객체를 생성하여 1개 레코드 정보를 BoardBean 객체에 저장
 			      // -> 글번호, 작성자, 제목, 날짜, 조회수만 필요
 				CustomerInfo customer = new CustomerInfo();         
