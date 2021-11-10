@@ -9,26 +9,31 @@
     ArrayList<ProductImg> productImg = (ArrayList<ProductImg>)request.getAttribute("productImg");
 	ArrayList<ProductImg> productDtlImg = (ArrayList<ProductImg>)request.getAttribute("productDtlImg");
 	String id = (String)session.getAttribute("sId");
+	
+	// 할인이 적용된 제품 금액
 	int price = (Integer)article.getProduct_price() * (100 - article.getProduct_discount())/100;
+	// 리뷰 개수
 	int reviewCount = (Integer)request.getAttribute("reviewCount");
+	// 별점
 	int starRate = 0;
+	// 리뷰 평점
 	double avgScore = (Double)request.getAttribute("avgScore");
+	// 할인 여부
 	boolean isDiscounted = false;
+	// 바로구매 
 	int product_qty = 1;
 	
-	
+	// 할인율이 0보다 크면 할인여부 변수를 true로 변경하여 할인과 관련된 곳에서 활용
 	if(article.getProduct_discount() > 0) {
 		isDiscounted = true;
 	}
 
-	
+	// 별점 퍼센테이지화
 	if(reviewCount > 0) {
 		starRate = (int)avgScore * 10 * 2;
 	} else {
 		starRate = 0;
 	}
-
-	
 	
 %>
 
@@ -38,21 +43,18 @@
 <head>
 <meta charset="utf-8">
 <title>집밥장인이 만든 온라인 식품몰 집밥선생</title>
-
 <script src="js/jquery-3.6.0.js"></script>
-<script type="text/javascript">
-   
-</script>
-<script type="text/javascript" charset="UTF-8"
-    src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+<script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
 <!-- 프로덕트넘 없을경우 나오는 페이지 처리하기 -->
 
 <script type="text/javascript">
+
 	var qty;
 	var product_num = <%=article.getProduct_num() %>;
 	var price = <%=price %>;
 	var max_qty = <%=article.getProduct_stock() %>;
 	var total_amt;
+	
 	$(document).ready(function() {
 		
 		var sendFormData = $('form').serialize();
@@ -97,25 +99,25 @@
 			// 제품 수량에 따른 총 제품 금액 계산
 			total_amt = price * qty;
 			$('#totalAmt').text(priceToString(total_amt));
-			$('#total_amt').val(total_amt);
 		});
 		
 		
 	});
 	
+	// 바로구매 버튼 클릭 시 결제 페이지로 이동(제품번호와 수량을 포함하여 이동)
 	function forwardOrderSheet() {
 		location.href = 'OrderSheet.or?product_num=' + product_num + '/&product_qty=' + qty;
 	} 
 	
+	// 수량변경 버튼을 통해 변경된 수량을 텍스트박스에 적용시키는 함수
 	function setQty() {
 		document.pdDetail.ord_qty.value = qty;
 	}
 	
+	// 천단위 콤마 처리를 위한 함수
 	function priceToString(price) {
 	    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 	}
-	
-
 
 </script>
 <link href="CSS/common.css" rel="stylesheet" type="text/css">
@@ -147,7 +149,6 @@
 					<input type="hidden" id="product_stock" name="product_stock" value="<%=article.getProduct_stock()%>"/>
 					<input type="hidden" id="Sname" name="Sname" value="<%=article.getSname() %>"/>
 					<input type="hidden" id="product_price" name="product_price" value="<%=article.getProduct_price()%>"/>
-					<input type="hidden" id="total_amt" name="total_amt" value=""/>
 				</div>
 		
 				<!-- GOODS VIEW -->
@@ -160,21 +161,19 @@
 								<ul class="cont">							
 									<li class="active" id="tumnail" style="background-image:url('${pageContext.request.contextPath}/img/<%= productImg.get(0).getProduct_img()%>.png">	
 									<span class="ir"><%=article.getProduct_name()%> </span></li>
-									
-									
 								</ul>		
 							</div>
 							
 							<div class="indi">
 								<ul class="page">
-								<%for(int i = 0; i < productImg.size(); i++){
-                                       if(productImg.get(i).getProduct_img_location() == 1){%>
-									<li class="on"><a href="#gd_img_bx">
-										<img src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.png" width="100" height="100" alt="<%=productImg.get(i).getProduct_original_img() %>" onclick="ChangeImg()"/>
-										<em class="ir"><%=article.getProduct_name()+i %></em></a>
-									</li>
-									<%} 
-                                    }%>
+									<%for(int i = 0; i < productImg.size(); i++){
+	                                      if(productImg.get(i).getProduct_img_location() == 1){%>
+											<li class="on"><a href="#gd_img_bx">
+												<img src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.png" width="100" height="100" alt="<%=productImg.get(i).getProduct_original_img() %>" onclick="ChangeImg()"/>
+												<em class="ir"><%=article.getProduct_name() + i %></em></a>
+											</li>
+										<%} 
+	                                  }%>
 								</ul>
 							</div>
 						</div>
@@ -184,12 +183,6 @@
 					<!-- GOODS INFO -->
 					<div class="gds_info" data-price_type_cd="00">
 						
-						<!-- BRAND -->
-						<div class="gd_brd">	
-							<dl>
-								<dt><%=article.getSname() %></dt>
-							</dl>
-						</div>
 						<!-- NAME -->
 						<h2 class="gd_name"><%=article.getProduct_name() %></h2>
 						<!-- TAG -->
@@ -205,8 +198,7 @@
 									<a href="#gds_cont3" class="rv">(고객후기 <%=reviewCount %>건)</a>
 								</div>
 							<%}%>
-							<div class="g_sns">						
-							</div>
+							<div class="g_sns"></div>
 						</div>
 						<!-- //SCORE -->
 									
@@ -226,6 +218,7 @@
 									<dd class="prc">
 										<span class="sale"><b><fmt:formatNumber value="<%=price%>" pattern="#,###"/></b>원</span>
 										<span class="nor"><fmt:formatNumber value="<%=article.getProduct_price() %>" pattern="#,###"/>원</span>
+									</dd>
 								</dl>
 							<%} %>
 							<dl>
@@ -401,12 +394,10 @@
 	</form>
 
 	<!-- MAIN_NOTICE_LAYER -->
-	<div class="main_ntc_lyr" id="main_ntc_lyr">
-	</div>
+	<div class="main_ntc_lyr" id="main_ntc_lyr"></div>
 	<!--// MAIN_NOTICE_LAYER -->
 
-
-	<!-- 아래는 추천 제품과 관련되어 있으므로 삭제 금지 -->
+	<!-- 아래는 css와 관련되어 있으므로 삭제 금지 -->
 	<script type="text/javascript" src="//www.thebanchan.co.kr/fo/js/ui.js?v=20211010210"></script>
 	<script type="text/javascript">
 		var top_banner_cookie_id = "TopBanner_10_200800000010574";
@@ -431,6 +422,7 @@
 		}
 		//}
 	</script>
+	
 	<jsp:include page="../inc/bottom.jsp"/>
 	
 </body>
