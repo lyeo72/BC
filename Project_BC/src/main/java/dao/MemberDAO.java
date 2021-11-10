@@ -13,14 +13,14 @@ import vo.CustomerBean;
 import vo.MemberBean;
 import vo.SellerBean;
 
-public class MemberDAO2 {
+public class MemberDAO {
 
-	private static MemberDAO2 instance = new MemberDAO2();
+	private static MemberDAO instance = new MemberDAO();
 
-	private MemberDAO2() {
+	private MemberDAO() {
 	}
 
-	public static MemberDAO2 getInstance() {
+	public static MemberDAO getInstance() {
 
 		return instance;
 	}
