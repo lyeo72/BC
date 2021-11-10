@@ -61,6 +61,8 @@ function sendEmail() {
 	}
 	
 	
+	
+	
 function checkSubmit() {
    var cPw = document.fr.member_pass.value;
    var cRpw = document.fr.member_repass.value;

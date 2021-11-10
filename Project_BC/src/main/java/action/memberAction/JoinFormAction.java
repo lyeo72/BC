@@ -24,7 +24,6 @@ public class JoinFormAction implements Action {
 		out.println("</script>");
 		
 		
-		
 		return forward;
 	}
 

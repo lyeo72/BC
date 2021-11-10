@@ -23,7 +23,6 @@ public class customerJoinProAction implements Action {
 		String name = request.getParameter("member_name"); 
 		int grade = Integer.parseInt(request.getParameter("grade"));
 		
-		
 		String customer_id = request.getParameter("member_id");
 		String phone = request.getParameter("member_phone");
 		String email = request.getParameter("email");

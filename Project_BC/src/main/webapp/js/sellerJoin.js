@@ -27,6 +27,8 @@ function openWindow(target) {
 	}	
 	
 	
+	
+	
 	if(document.fr.member_id.value != null){
 		var element = document.getElementById('checkIdResult'); 
 		element.innerHTML = "";

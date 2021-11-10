@@ -85,6 +85,7 @@
         <li><a id="head_login_b" href="MemberJoinForm.me">회원가입</a></li>
         <li><a href="CustCenterMain.co">고객센터</a></li>   
         
+        
         <%}else{
        		 int grade = (Integer)session.getAttribute("grade");
         %>

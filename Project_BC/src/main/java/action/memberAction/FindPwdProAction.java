@@ -32,7 +32,6 @@ public class FindPwdProAction implements Action {
 		String id = request.getParameter("pw_id");
 		String name = request.getParameter("pw_name");
 		
-
 		String email = null;
 		String pwd = null;
 		

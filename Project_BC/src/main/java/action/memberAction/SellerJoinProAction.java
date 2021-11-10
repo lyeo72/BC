@@ -33,7 +33,6 @@ public class SellerJoinProAction implements Action {
 		
 		String dtl_addr = request.getParameter("dtl_address");
 		
-		
 		String phone = request.getParameter("member_phone");
 		String email = request.getParameter("email");
 	
