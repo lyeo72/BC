@@ -26,7 +26,7 @@ public class JdbcUtil {
 		try {
 
 			String driver = "com.mysql.jdbc.Driver";
-			String url = "jdbc:mysql://localhost:3306/bc_db?useSSL=false";
+			String url = "jdbc:mysql://localhost:8080/bc_db?useSSL=false";
 			String DBuser = "root";
 			String DBpassword = "1234";
 

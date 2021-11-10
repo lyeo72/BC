@@ -110,7 +110,7 @@ public class SideDAO {
 
 	// ================================================================================
 
-	public ArrayList<BoardBean> selectSale(String category) {
+	public ArrayList<BoardBean> selectSale() {
 
 		ArrayList<BoardBean> saleList = null;
 
@@ -122,7 +122,7 @@ public class SideDAO {
 		try {
 			con = getConnection();
 
-			String sql = "select * from product where product_discount >0 order by product_discount ASC;";
+			String sql = "select * from product where product_discount >0 order by product_discount DESC;";
 
 			pstmt = con.prepareStatement(sql);
 
@@ -182,7 +182,7 @@ public class SideDAO {
 
 	// ==========================================================
 
-	public ArrayList<BoardBean> selectBrandNew(String category) {
+	public ArrayList<BoardBean> selectBrandNew() {
 
 		ArrayList<BoardBean> brandNewList = null;
 

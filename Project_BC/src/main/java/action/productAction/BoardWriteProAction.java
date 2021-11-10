@@ -129,7 +129,7 @@ public class BoardWriteProAction implements Action {
 						File f1 = new File(fullFileName);
 
 						if (f1.exists()) {
-							File newfile = new File(realFolder + "/" + board_file+".png");
+							File newfile = new File(realFolder + "/" + board_file+".jpg");
 							System.out.println(newfile.toString());
 							f1.renameTo(newfile);
 						}

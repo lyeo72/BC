@@ -19,10 +19,10 @@ public class BrandNewAction implements Action {
 		
 		ActionForward forward = null;
 		
-		String category = request.getParameter("category");
+	
 		
 		BrandNewService service = new BrandNewService();
-		ArrayList<BoardBean> brandNewList = service.isBrandNew(category);
+		ArrayList<BoardBean> brandNewList = service.isBrandNew();
 		
 		request.setAttribute("brandNewList", brandNewList);
 		

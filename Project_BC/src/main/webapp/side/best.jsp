@@ -61,9 +61,9 @@
     <div class="list-wrap">
         <div class="page-title">
             <div class="title">
-                <span class="icon"><img
-                    src="//cdn.thebanchan.co.kr/upload/C00001/dspl/banner/8010/210/00/200700000012210.jpg"
-                    style="width: 50px; height: 50px;"></span>
+                <span class="icon">
+                    <img src="//cdn.thebanchan.co.kr/upload/C00001/dspl/banner/8010/210/00/200700000012210.png" style="width: 50px; height: 50px;">
+                   </span>
                     <strong>베스트</strong>
             </div>
 
