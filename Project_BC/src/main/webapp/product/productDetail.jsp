@@ -10,12 +10,7 @@
 	ArrayList<ProductImg> productDtlImg = (ArrayList<ProductImg>)request.getAttribute("productDtlImg");
 	String id = (String)session.getAttribute("sId");
 	int price = (Integer)article.getProduct_price() * (100 - article.getProduct_discount())/100;
-	
-	int reviewCount = 0;
-	if((Integer)request.getAttribute("reviewCount") == null) {
-		 reviewCount = (Integer)request.getAttribute("reviewCount");
-		
-	}
+	int reviewCount = (Integer)request.getAttribute("reviewCount");
 	int starRate = 0;
 	double avgScore = (Double)request.getAttribute("avgScore");
 	boolean isDiscounted = false;
@@ -299,14 +294,9 @@
 					<h3 class="ir">제품 상세정보</h3>
 					<div class="gd_detail">
 						<div align="center">
-						
-							<%
-								if(productDtlImg != null) {
-									
-								for(int i = 0; i < productDtlImg.size(); i++){%>
-									<img alt="" src="${pageContext.request.contextPath}/img/<%=productDtlImg.get(i).getProduct_img()%>.png"/>
-								<%}
-							}%>
+							<%for(int i = 0; i < productDtlImg.size(); i++){%>
+								<img alt="" src="${pageContext.request.contextPath}/img/<%=productDtlImg.get(i).getProduct_img()%>.png"/>
+							<%}%>
 						</div>
 					</div>
 					<!-- DETAIL -->
