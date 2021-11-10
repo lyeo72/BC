@@ -51,7 +51,7 @@ int shipping_fee = Integer.parseInt(request.getAttribute("shipping_fee").toStrin
 	
 	
 </script>
-
+<%@ include file="/inc/top.jsp" %>
 <!-- CONTENT -->
 <div id="content" class="content">
 
@@ -175,7 +175,7 @@ int shipping_fee = Integer.parseInt(request.getAttribute("shipping_fee").toStrin
 <!-- //CONTENT -->
 
 
-
+<jsp:include page="../inc/bottom.jsp"/>
 </body>
 </html>
 
