@@ -88,7 +88,11 @@ ArrayList<OrderDetailBean> orderDetailList = (ArrayList<OrderDetailBean>)request
 									
 									<a href="">
 										<span class="img">
+<<<<<<< HEAD
+										<img src="${pageContext.request.contextPath}/img/<%=orderDetailList.get(i).getProduct_img()%>.png" width="80" height="80" alt="" onerror="this.src='/common/images/common/noimg_100.jpg'"/>
+=======
 										<img src="${pageContext.request.contextPath}/img/<%=orderDetailList.get(i).getProduct_name()%>01_01.jpg" width="80" height="80" alt="" onerror="this.src='/common/images/common/noimg_100.jpg'"/>
+>>>>>>> branch 'JSW' of https://github.com/ITWILL1TEAM/BC.git
 										</span>
 									</a>
 									
@@ -97,7 +101,7 @@ ArrayList<OrderDetailBean> orderDetailList = (ArrayList<OrderDetailBean>)request
 									
 									<a href="">
 									
-										<span class="set"><b>[<%=orderDetailList.get(i).getSname() %>] </b> <%=orderDetailList.get(i).getProduct_name() %></span>
+										<span class="set"><%=orderDetailList.get(i).getProduct_name() %></span>
 										
 									</a>
 									
@@ -124,8 +128,8 @@ ArrayList<OrderDetailBean> orderDetailList = (ArrayList<OrderDetailBean>)request
 								
 									<span class="btn">
 										
-										<button type="button" class="qd" id="cnclBtn" onclick="" title="주문 즉시 취소 알림">즉시취소</button>
-										
+<!-- 										<button type="button" class="qd" id="cnclBtn" onclick="" title="주문 즉시 취소 알림">즉시취소</button> -->
+										<%=orderList.get(0).getPay_method() %>
 									</span>
 								
 								</td>
@@ -161,13 +165,13 @@ ArrayList<OrderDetailBean> orderDetailList = (ArrayList<OrderDetailBean>)request
 								<td class="pay_method"></td>
 							</tr>
 							<tr>
-								<th scope="row">입금하실 금액</th>
-								<td><em><%=orderList.get(0).getOrder_price() %></em></td>
+								<th scope="row">결제금액</th>
+								<td><em><fmt:formatNumber value="<%=orderList.get(0).getOrder_price()%>" pattern="#,###"/>원</em></td>
 							</tr>
 							<tr class="BankAccount" id="BankAccount">
 								<th scope="row">입금계좌/마감일</th>
 								
-								<td><em>농협은행 79018613743185 (예금주 : 동원디어푸드 주식회사)</em> / 2021-11-05일 까지 입금해주시기 바랍니다. </td>
+								<td><em>농협은행 101010101010 (예금주 : 밥조 주식회사)</em> / 2021-11-05일 까지 입금해주시기 바랍니다. </td>
 							</tr>
 						</tbody>
 					</table>
