@@ -47,7 +47,6 @@ public class OrderFormAction implements Action {
 		product_num= product_num.substring(0, product_num.lastIndexOf("/"));
 		String[] nums = product_num.split("/");
 		
-		
 		for(String num : nums) {
 			System.out.println("액션에서의 : "+num);
 			System.out.println(num);

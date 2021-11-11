@@ -40,6 +40,10 @@ private static AddressDAO instance = new AddressDAO();
 					String sql = "UPDATE customer_address SET address_priority = 0";
 					pstmt1 = con.prepareStatement(sql);
 					pstmt1.executeUpdate();
+				}else {
+					String sql = "UPDATE customer_address SET address_priority = 0 where address_priority = 0";
+					pstmt1 = con.prepareStatement(sql);
+					pstmt1.executeUpdate();
 				}
 				
 				String sql="INSERT INTO customer_address VALUES (?,?,?,?,?)";

@@ -10,8 +10,6 @@
     ArrayList<BoardBean> saleList = (ArrayList<BoardBean>)request.getAttribute("saleList");
     ArrayList<BoardBean> brandNewList = (ArrayList<BoardBean>)request.getAttribute("brandNewList");
   
-  
-  
   %>
 <html>
 <head>

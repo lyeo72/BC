@@ -103,8 +103,8 @@ $('#addressBtn').on('click', function() {
 						<td><%=addressList.get(i).getRoadAddress() %> <%=addressList.get(i).getDtl_addr() %></td>
 						<%if(addressList.get(i).getAddress_priority()==0){ %>
 						<td>
-							<button id="addressBtn">기본배송지로 지정 </button>
-							<input type="hidden" id="addressInfo" name="addressInfo" value="<%=addressList.get(i).getRoadAddress() %> <%=addressList.get(i).getDtl_addr() %>">
+							배송지
+<%-- 							<input type="hidden" id="addressInfo" name="addressInfo" value="<%=addressList.get(i).getRoadAddress() %> <%=addressList.get(i).getDtl_addr() %>"> --%>
 						</td>
 						<%}else{ %>
 						<td>

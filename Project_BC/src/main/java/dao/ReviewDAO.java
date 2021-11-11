@@ -374,16 +374,16 @@ public class ReviewDAO {
 			rs = pstmt.executeQuery();
 			
 			orderList = new ArrayList<Productbean>();
-			Productbean product = new Productbean();
 
 			while (rs.next()) {
+				Productbean product = new Productbean();
 				
+				product.setProduct_price(rs.getInt("order_num"));//order price = order_num
 				product.setProduct_num(rs.getInt("product_num"));
-				product.setProduct_price(rs.getInt("order_num"));
 				
 				sql = "SELECT * FROM product WHERE product_num=?";
 				pstmt2 = con.prepareStatement(sql);
-				pstmt2.setInt(1, product.getProduct_num());
+				pstmt2.setInt(1, product.getProduct_num());//수정
 				
 				rs2 = pstmt2.executeQuery();
 				if(rs2.next()) {

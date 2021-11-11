@@ -6,7 +6,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 ArrayList<OrderBean> orderList = (ArrayList<OrderBean>)request.getAttribute("orderList");
-ArrayList<OrderDetailBean> orderDetailList = (ArrayList<OrderDetailBean>)request.getAttribute("orderDetailList");
+ArrayList<OrderDetailBean> orderDetailList = (ArrayList<OrderDetailBean>)request.getAttribute("orderProductList");
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -81,18 +81,21 @@ ArrayList<OrderDetailBean> orderDetailList = (ArrayList<OrderDetailBean>)request
 						</thead>
 						<tbody>
 							<%
-							for(int i=0; i<orderDetailList.size(); i++){
+							int detail = 0;
+							if(orderDetailList==null){
+								detail =0;
+							}else{
+								detail = orderDetailList.size();
+							}
+							
+							for(int i=0; i<detail; i++){
 							%>
 							<tr>
 								<td class="vert2">
 									
 									<a href="">
 										<span class="img">
-<<<<<<< HEAD
-										<img src="${pageContext.request.contextPath}/img/<%=orderDetailList.get(i).getProduct_img()%>.png" width="80" height="80" alt="" onerror="this.src='/common/images/common/noimg_100.jpg'"/>
-=======
 										<img src="${pageContext.request.contextPath}/img/<%=orderDetailList.get(i).getProduct_name()%>01_01.jpg" width="80" height="80" alt="" onerror="this.src='/common/images/common/noimg_100.jpg'"/>
->>>>>>> branch 'JSW' of https://github.com/ITWILL1TEAM/BC.git
 										</span>
 									</a>
 									
@@ -104,7 +107,6 @@ ArrayList<OrderDetailBean> orderDetailList = (ArrayList<OrderDetailBean>)request
 										<span class="set"><%=orderDetailList.get(i).getProduct_name() %></span>
 										
 									</a>
-									
 									
 										<span class="cnt"><b class="qt"><%=orderDetailList.get(i).getProduct_qty() %></b>개 / <b class="pr"><fmt:formatNumber value="<%=orderDetailList.get(i).getProduct_price()-(orderDetailList.get(i).getProduct_price()*orderDetailList.get(i).getProduct_discount()*0.01)%>" pattern="#,###"/></b>원 </span>
 									

@@ -224,20 +224,14 @@ function payMethod(method) {
 		<input type="hidden" name="num" id="num" value="<%=cartList.get(i).getProduct_num()%>">
 		
 					<tr>
-					
 						<td>
 							<span class="tx"> 
 								<strong><%=cartList.get(i).getProduct_name()%></strong>
 							</span> 
-<<<<<<< HEAD
-							<span class="img">
-									<img src="${pageContext.request.contextPath}/img/<%=cartList.get(i).getProduct_img()%>.png" width="80" height="80" alt="더반찬& 양념소불고기 2개 (고추장불고기, 쌈채소증정)" onerror="this.src='/common/images/common/noimg_100.jpg'"/> 
 							
-=======
 							<span class="img"><a href="${pageContext.request.contextPath}/upload/<%=cartList.get(i).getProduct_img()%>">
 									<img src="${pageContext.request.contextPath}/img/<%=cartList.get(i).getProduct_name()%>01_01.jpg" width="80" height="80" alt="더반찬& 양념소불고기 2개 (고추장불고기, 쌈채소증정)" onerror="this.src='/common/images/common/noimg_100.jpg'"/> 
 							</a>
->>>>>>> branch 'JSW' of https://github.com/ITWILL1TEAM/BC.git
 							</span>
 						</td>
 						

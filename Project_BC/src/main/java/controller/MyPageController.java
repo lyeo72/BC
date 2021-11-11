@@ -40,7 +40,7 @@ public class MyPageController extends HttpServlet {
 		if (session.getAttribute("grade")!=null) {
 			grade = (int)session.getAttribute("grade");
 		}else {
-			grade = 3;
+			grade = 0;
 		}
 		System.out.println(grade);
 		if (grade!=3) {	
