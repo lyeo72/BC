@@ -17,15 +17,20 @@ public class MainAction implements Action {
 		
 		BoardListService service = new BoardListService();
 		ReviewListService reviewService = new ReviewListService();
+		SaleService sale = new SaleService();
+		BrandNewService newList = new BrandNewService();
+		
 		
 		int listCount = service.getListCount();//글갯수 불러옴.			
 		
 		ArrayList<BoardBean> productList = service.getBoardList();	
-		
-//		int reviewCount = reviewService.getListCount()
-		
+		ArrayList<BoardBean> saleList = sale.isSale();
+		ArrayList<BoardBean> brandNewList = newList.isBrandNew();
+
 		
 		request.setAttribute("productList", productList);
+		request.setAttribute("saleList", saleList);
+		request.setAttribute("brandNewList", brandNewList);
 	
 		
 		

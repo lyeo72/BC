@@ -7,7 +7,10 @@
 <%
 	BoardBean article = (BoardBean)request.getAttribute("article");
     ArrayList<ProductImg> productImg = (ArrayList<ProductImg>)request.getAttribute("productImg");
-	ArrayList<ProductImg> productDtlImg = (ArrayList<ProductImg>)request.getAttribute("productDtlImg");
+    if(productImg==null){
+    	productImg = new ArrayList();
+    }
+// 	ArrayList<ProductImg> productDtlImg = (ArrayList<ProductImg>)request.getAttribute("productDtlImg");
 	String id = (String)session.getAttribute("sId");
 	
 	// 할인이 적용된 제품 금액
@@ -159,21 +162,22 @@
 						<div class="gd_img_bx">
 							 <div class="fade_slide gd_img" >
 								<ul class="cont">							
-									<li class="active" id="tumnail" style="background-image:url('${pageContext.request.contextPath}/img/<%= productImg.get(0).getProduct_img()%>.png">	
+									<li class="active" id="tumnail" style="background-image:url('${pageContext.request.contextPath}/img/<%= article.getProduct_name()%>01_01.jpg')">	
 									<span class="ir"><%=article.getProduct_name()%> </span></li>
 								</ul>		
 							</div>
 							
 							<div class="indi">
 								<ul class="page">
-									<%for(int i = 0; i < productImg.size(); i++){
-	                                      if(productImg.get(i).getProduct_img_location() == 1){%>
-											<li class="on"><a href="#gd_img_bx">
-												<img src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.png" width="100" height="100" alt="<%=productImg.get(i).getProduct_original_img() %>" onclick="ChangeImg()"/>
-												<em class="ir"><%=article.getProduct_name() + i %></em></a>
-											</li>
-										<%} 
-	                                  }%>
+
+								<%for(int i = 0; i < productImg.size(); i++){
+                                       if(productImg.get(i).getProduct_img_location() == 1){%>
+									<li class="on"><a href="#gd_img_bx">
+										<img src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.jpg" width="100" height="100" alt="<%=productImg.get(i).getProduct_original_img() %>" onclick="ChangeImg()"/>
+										<em class="ir"><%=article.getProduct_name()+i %></em></a>
+									</li>
+									<%} 
+                                    }%>
 								</ul>
 							</div>
 						</div>
@@ -182,7 +186,13 @@
 		
 					<!-- GOODS INFO -->
 					<div class="gds_info" data-price_type_cd="00">
-						
+
+						<!-- BRAND -->
+						<div class="gd_brd">	
+							<dl>
+								<dt><%=article.getSname()%></dt>
+							</dl>
+						</div>
 						<!-- NAME -->
 						<h2 class="gd_name"><%=article.getProduct_name() %></h2>
 						<!-- TAG -->
@@ -194,7 +204,7 @@
 								<div class="g_scr">
 									<span class="star_rate03"><b class="ir">평점</b>
 									<em style="width:<%=starRate %>%;"><%=avgScore %></em></span>
-									<span class="scr"><b><%=article.getProduct_review_score() %></b></span>
+									<span class="scr"><b><%=((double)((int)(article.getProduct_review_score()*10)))/10 %></b></span>
 									<a href="#gds_cont3" class="rv">(고객후기 <%=reviewCount %>건)</a>
 								</div>
 							<%}%>
@@ -287,9 +297,12 @@
 					<h3 class="ir">제품 상세정보</h3>
 					<div class="gd_detail">
 						<div align="center">
-							<%for(int i = 0; i < productDtlImg.size(); i++){%>
-								<img alt="" src="${pageContext.request.contextPath}/img/<%=productDtlImg.get(i).getProduct_img()%>.png"/>
-							<%}%>
+							<%for(int i = 0; i < productImg.size(); i++){
+									if(productImg.get(i).getProduct_img_location() == 2){
+							%>
+								<img alt="" src="${pageContext.request.contextPath}/img/<%=productImg.get(i).getProduct_img()%>.jpg"/>
+							<%}
+							}%>
 						</div>
 					</div>
 					<!-- DETAIL -->

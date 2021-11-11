@@ -164,7 +164,7 @@
 									<td class="info">
 										<div class="img">
 											<a href="Product.do?product_num=<%=cartList.get(i).getProduct_num() %>" name="go_detail_button" >
-												<img src="${pageContext.request.contextPath}/img/<%=cartList.get(i).getProduct_img()%>.png" width="100" height="100" alt="양장피" onerror="this.src='/common/images/common/noimg_100.jpg'"/>
+												<img src="${pageContext.request.contextPath}/img/<%=cartList.get(i).getProduct_name()%>01_01.jpg" width="100" height="100" alt="양장피" onerror="this.src='/common/images/common/noimg_100.jpg'"/>
 												<span class="ir"><%=cartList.get(i).getProduct_name() %></span>
 											</a>
 										</div>

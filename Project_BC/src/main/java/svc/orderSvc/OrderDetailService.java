@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import dao.OrderDAO;
 import vo.BasketBean;
 import vo.Productbean;
-import vo.orderDetailBean;
+import vo.OrderDetailBean;
 
 public class OrderDetailService {
 
-	public ArrayList<orderDetailBean> getSelectProduct(int[] product_nums) {
+	public ArrayList<OrderDetailBean> getSelectProduct(int[] product_nums) {
 		System.out.println("orderService - getSelectCart()");
 		// 공통작업-1. Connection Pool 로부터 Connection 객체 가져오기
 		Connection con = getConnection();
@@ -23,10 +23,10 @@ public class OrderDetailService {
 		dao.setConnection(con);
 		
 		
-		ArrayList<orderDetailBean> orderDetailList = new ArrayList<orderDetailBean>();
-		orderDetailBean orderDetail = null;
+		ArrayList<OrderDetailBean> orderDetailList = new ArrayList<OrderDetailBean>();
+		OrderDetailBean orderDetail = null;
 		
-		orderDetail = new orderDetailBean();
+		orderDetail = new OrderDetailBean();
 		
 		while(orderDetailList.size()!=product_nums.length) {
 			for(int product_num : product_nums) {

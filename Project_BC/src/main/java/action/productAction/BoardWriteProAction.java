@@ -3,7 +3,6 @@ package action.productAction;
 import java.io.*;
 import java.util.*;
 
-import javax.naming.*;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -98,7 +97,7 @@ public class BoardWriteProAction implements Action {
 				boolean isImgSuccess = false;
 
 				ProductImg productimg = new ProductImg();
-				
+
 
 				Enumeration files = multi.getFileNames();// Enumeration형식으로 업로드되 파일 이름 리턴
 
@@ -110,24 +109,27 @@ public class BoardWriteProAction implements Action {
 					int imgVal = Integer.parseInt(multi.getParameter("imgValue" + z));
 					String board_file = null;
 
-					if (imgVal == 1) {						
-							board_file = name + "0" + imgVal + "_0" + i;	
-							i++;
+					if (imgVal == 1) {
+						if (i < 10) {
+							board_file = name + "0" + imgVal + "_0" + i;
+						} 
+						i++;
 					} else {
-					
+						if (j < 10) {
 							board_file = name + "0" + imgVal + "_0" + j;
-							j++;
+						} 
+						j++;
 					}
-					
-					
+
+
 					if (!filestr.equals("")) {
 
-						String fullFileName = realFolder + "\\" + board_original_file;
+						String fullFileName = realFolder + "/" + board_original_file;
 						System.out.println(fullFileName);
 						File f1 = new File(fullFileName);
 
 						if (f1.exists()) {
-							File newfile = new File(realFolder + "\\" + board_file+".png");
+							File newfile = new File(realFolder + "/" + board_file+".jpg");
 							System.out.println(newfile.toString());
 							f1.renameTo(newfile);
 						}

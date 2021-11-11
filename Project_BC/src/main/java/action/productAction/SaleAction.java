@@ -19,10 +19,10 @@ public class SaleAction implements Action {
 	
 		ActionForward forward = null;
 		
-		String category = request.getParameter("category");
+		
 		
 		SaleService service = new SaleService();
-		ArrayList<BoardBean> saleList = service.isSale(category);
+		ArrayList<BoardBean> saleList = service.isSale();
 		
 		request.setAttribute("saleList", saleList);
 		

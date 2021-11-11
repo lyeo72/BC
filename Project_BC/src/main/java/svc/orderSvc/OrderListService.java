@@ -9,6 +9,7 @@ import dao.OrderDAO;
 import vo.BasketBean;
 
 import vo.OrderBean;
+import vo.OrderDetailBean;
 import vo.orderProductBean;
 
 
@@ -40,7 +41,7 @@ public class OrderListService {
 	}
 
 
-	public ArrayList<orderProductBean> getOrderProduct(int order_num) {
+	public ArrayList<OrderDetailBean> getOrderProduct(int order_num) {
 		System.out.println("service -getOrderProduct");
 		
 		System.out.println("orderService - getSelectOrder()");
@@ -51,7 +52,7 @@ public class OrderListService {
 		// 공통작업-3. BoardDAO 객체에 Connection 객체 전달하기
 		dao.setConnection(con);
 		
-		ArrayList<orderProductBean> orderProductList = null;
+		ArrayList<OrderDetailBean> orderProductList = new ArrayList<OrderDetailBean>();
 		orderProductList = dao.selectOrderProductList(order_num);
 		
 		close(con);

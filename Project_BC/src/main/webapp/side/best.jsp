@@ -61,9 +61,9 @@
     <div class="list-wrap">
         <div class="page-title">
             <div class="title">
-                <span class="icon"><img
-                    src="//cdn.thebanchan.co.kr/upload/C00001/dspl/banner/8010/210/00/200700000012210.png"
-                    style="width: 50px; height: 50px;"></span>
+                <span class="icon">
+                    <img src="//cdn.thebanchan.co.kr/upload/C00001/dspl/banner/8010/210/00/200700000012210.png" style="width: 50px; height: 50px;">
+                   </span>
                     <strong>베스트</strong>
             </div>
 
@@ -98,7 +98,7 @@
                                     class="ico-cart2"></i>장바구니</a>
                             </div>
                             <a href="Product.do?product_num=<%=productNum %>">
-                                <img src="${pageContext.request.contextPath}/img/<%=productImgName %>01_01.png"
+                                <img src="${pageContext.request.contextPath}/img/<%=productImgName %>01_01.jpg"
                                 width="296" height="296"
                                 alt="더반찬&amp; 집밥만찬 2종 골라담기 (5,000원 부터~)"
                                 >

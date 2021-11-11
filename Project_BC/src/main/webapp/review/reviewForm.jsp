@@ -101,7 +101,7 @@ function setStar(point) {
 		<button class="button_close" type="button" onclick="self.close();"><span class="blind">팝업닫기</span><span class="ir"></span></button>
 		<div class="selected_info v2">
 			<div class="selected_img">
-				<img src="${pageContext.request.contextPath}/img/<%=product_name%>01_01.png" width="110" height="110" alt="음식 설명" onerror="this.onerror=null;this.src='//img.ssgcdn.com/trans.ssg?src=/ui/ssg/img/common/img_ready_500x500.jpg&w=110&h=110&t=269231888f4d2e45b39cf84c3551eb7dd68372a7'">
+				<img src="${pageContext.request.contextPath}/img/<%=product_name%>01_01.jpg" width="110" height="110" alt="음식 설명" onerror="this.onerror=null;this.src='//img.ssgcdn.com/trans.ssg?src=/ui/ssg/img/common/img_ready_500x500.jpg&w=110&h=110&t=269231888f4d2e45b39cf84c3551eb7dd68372a7'">
 			</div>
 			<div class="item_info">
 				
