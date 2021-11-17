@@ -57,7 +57,6 @@
         <section id="content" class="main" style="padding-top: 118px;">
             <!-- wrap addClass -->
 
-
             <!--  caousel -->
             <div id="carouselExampleCaptions" class="carousel slide"
                 data-bs-ride="carousel">
@@ -127,7 +126,6 @@
                             <div class="title-type">MD 추천</div>
                         </div>
                         <div class="inner-box">
-                            <!-- 2020-07-08 레이아웃 변경 -->
                             <div class="tab-wrap">
                                 <ul class="tab-type js-tab">
                                     <li><a href="#md-01" id="TAB_D2007000995">오늘은   이거 어때요?</a></li>
@@ -219,7 +217,6 @@
                                                     
                                                     <%                                        
                                                       if(productList!=null){ 
-                                                        //productCount = 4;
                                                         if(productList.size() < 8){
                                                             productCount = productList.size();
                                                         }else{
@@ -322,7 +319,6 @@
                                                             </a>
                                                         </div>
                                                         <div class="info">
-<%--                                                             <img src="${pageContext.request.contextPath}/upload/<%=productImgName %>01_01.png" tabindex="0"> --%>
                                                                 <p class="subject"><%=product_name %></p>
                                                                <div class="price">
                                                                 <p>
@@ -454,11 +450,6 @@
                             </div>
                             <div class="sale-wrap">                            
                                
-                               
-                               
-                               
-                               
-                               
                                 <div class="sale-box primary">
                                    <div class="item">
                                         <div class="thumb">
@@ -547,8 +538,6 @@
                                         <%}
                                     }%>
 
-                                        
-
                                     </ul>
 
                                 </div>
@@ -557,13 +546,7 @@
                     </article>
                   </div>
                     
-                    
-                    
-                    
-                    
-                    
                     <!-- //할인 메뉴 -->
-
 
                     <!-- 새로나옸어요 -->
                     <article class="article md-article bdNone">

@@ -11,7 +11,7 @@ import vo.ActionForward;
 import vo.CustomerBean;
 import vo.MemberBean;
 
-public class customerJoinProAction implements Action {
+public class CustomerJoinProAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

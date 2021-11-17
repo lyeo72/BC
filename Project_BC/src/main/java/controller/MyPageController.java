@@ -27,10 +27,8 @@ import vo.ActionForward;
 public class MyPageController extends HttpServlet {
        
     protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("MyPageController");
 		request.setCharacterEncoding("UTF-8");
 		String command = request.getServletPath();
-		System.out.println("command : " + command);
 		
 		ActionForward forward = null;
 		Action action = null;
@@ -42,7 +40,6 @@ public class MyPageController extends HttpServlet {
 		}else {
 			grade = 0;
 		}
-		System.out.println(grade);
 		if (grade!=3) {	
 			
 			response.setContentType("text/html; charset=UTF-8");
@@ -59,7 +56,6 @@ public class MyPageController extends HttpServlet {
 				try {
 					forward = action.execute(request, response);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}else if(command.equals("/Resell.my")) {
@@ -70,7 +66,6 @@ public class MyPageController extends HttpServlet {
                 try {
                     forward = action.execute(request, response);
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 			}else if(command.equals("/Mypage.my")) {
@@ -81,7 +76,6 @@ public class MyPageController extends HttpServlet {
                 try {
                     forward = action.execute(request, response);
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 			}else if(command.equals("/Mypage3.my")) {
@@ -89,7 +83,6 @@ public class MyPageController extends HttpServlet {
                 try {
                     forward = action.execute(request, response);
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }else if(command.equals("/QnA.my")) {
@@ -100,7 +93,6 @@ public class MyPageController extends HttpServlet {
                 try {
                     forward = action.execute(request, response);
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 				
@@ -112,7 +104,6 @@ public class MyPageController extends HttpServlet {
                 try {
                     forward = action.execute(request, response);
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 				
@@ -121,7 +112,6 @@ public class MyPageController extends HttpServlet {
                 try {
                     forward = action.execute(request, response);
                 } catch (Exception e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 				
@@ -130,7 +120,6 @@ public class MyPageController extends HttpServlet {
 				try {
 					forward = action.execute(request, response);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}else if(command.equals("/Default.my")) {
@@ -138,7 +127,6 @@ public class MyPageController extends HttpServlet {
 				try {
 					forward = action.execute(request, response);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.Iterator;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +20,6 @@ public class AdminController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String command = request.getServletPath();
-//		System.out.println("command : " + command);
 		
 		Action action = null;
 		ActionForward forward = null;
@@ -31,7 +29,6 @@ public class AdminController extends HttpServlet {
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		
@@ -40,13 +37,12 @@ public class AdminController extends HttpServlet {
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}else if(command.equals("/SellerInfo.ad")) {			
 			forward = new ActionForward();
 			forward.setPath("/adminPage/sellerInfo.jsp");
-			forward.setRedirect(false); // Dispatcher 방식(기본값이므로 생략 가능)
+			forward.setRedirect(false);
 
 		}else if(command.equals("/ProductList.ad")) {
             // 글쓰기 작업을 위한 뷰페이지로 포워딩
@@ -54,19 +50,17 @@ public class AdminController extends HttpServlet {
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}else if(command.equals("/ProductRegister.ad")) {			
 				forward = new ActionForward();
 				forward.setPath("/adminPage/productRegister.jsp");
-				forward.setRedirect(false); // Dispatcher 방식(기본값이므로 생략 가능)
+				forward.setRedirect(false); 
 		}else if (command.equals("/ProductWritePro.ad")) {
 			action = new BoardWriteProAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			// 위임받은 Exception 예외처리 필요..!
@@ -96,7 +90,7 @@ public class AdminController extends HttpServlet {
 		}else if(command.equals("/NoticeWrite.ad")) {          
             forward = new ActionForward();
             forward.setPath("/adminPage/NoticeWrite.jsp");
-            forward.setRedirect(false); // Dispatcher 방식(기본값이므로 생략 가능)
+            forward.setRedirect(false); 
         }else if(command.equals("/NoticeWritePro.ad")) {
             action = new NoticeWriteProAction();
             try {

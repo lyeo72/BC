@@ -1,4 +1,4 @@
-package action.oderAction;
+package action.orderAction;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import vo.ActionForward;
 import vo.BasketBean;
 import vo.CustomerInfo;
 import vo.OrderBean;
-import vo.orderProductBean;
+import vo.OrderProductBean;
 
 public class OrderListAction implements Action {
 

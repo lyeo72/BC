@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import action.Action;
 import vo.ActionForward;
 
-/**
- * Servlet implementation class CustomerController
- */
+
 @WebServlet("*.co")
 public class CustomerController extends HttpServlet {
 	
@@ -23,7 +21,6 @@ public class CustomerController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String command = request.getServletPath();
-		System.out.println("command : " + command);
 		
 		Action action = null;
 		ActionForward forward = null;
@@ -32,40 +29,35 @@ public class CustomerController extends HttpServlet {
 			// 글쓰기 작업을 위한 뷰페이지로 포워딩
 			forward = new ActionForward();
 			forward.setPath("/cust/custCenter.jsp");
-			forward.setRedirect(false); // Dispatcher 방식(기본값이므로 생략 가능)
+			forward.setRedirect(false); 
 		}else if(command.equals("/CustCenterFAQ.co")) {
 			//faq페이지로 이동
 			forward = new ActionForward();
 			forward.setPath("/cust/faq.jsp");
-			forward.setRedirect(false); // Dispatcher 방식(기본값이므로 생략 가능)
+			forward.setRedirect(false); 
 		}else if(command.equals("/CustCenterNotice.co")) {
 			//faq페이지로 이동
 			forward = new ActionForward();
 			forward.setPath("/cust/custNotice.jsp");
-			forward.setRedirect(false); // Dispatcher 방식(기본값이므로 생략 가능)
+			forward.setRedirect(false); 
 		}else if(command.equals("/CustCenterQNA.co")) {
 			//faq페이지로 이동
 			forward = new ActionForward();
 			forward.setPath("/cust/qna.jsp");
-			forward.setRedirect(false); // Dispatcher 방식(기본값이므로 생략 가능)
+			forward.setRedirect(false); 
 		}else if(command.equals("/CustCenterQNAList.co")) {
 			//faq페이지로 이동
 			forward = new ActionForward();
 			forward.setPath("/cust/qnaList.jsp");
-			forward.setRedirect(false); // Dispatcher 방식(기본값이므로 생략 가능)
+			forward.setRedirect(false); 
 		}
 		
-		
-		
-		
-		
-		//======================================================
 		
 		
 		if(forward != null) {
 			if(forward.isRedirect()) { // true = Redirect 방식
 				response.sendRedirect(forward.getPath());
-			} else {
+			} else { // false = Dispatcher 방식
 				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}

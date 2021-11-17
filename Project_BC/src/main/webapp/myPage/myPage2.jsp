@@ -118,20 +118,15 @@ String phone = customerInfo.getPhone();
 									</td>
 								</tr>
 								<tr>
-									<th scope="row"><label for="cell_no1" >휴대전화</label><em class="es">필수입력</em></th>
-									
-									
+									<th scope="row"><label for="cell_no" >휴대전화</label><em class="es">필수입력</em></th>
 									<td>
-										<input type="hidden" id="phone_chk" name="phone_chk" value="N">
 										<span class="ph">
-																			
 									
-											<input type="text" class="input" id="cell_no1" name="cell_no1" data-class="phone_chk" validate="empty" title="휴대폰  입력" value="<%=phone%>" maxlength="11" style="width:216px">
-						
+										<input type="text" class="input" id="phone" name="phone" data-class="phone_chk" validate="empty" title="휴대폰  입력" value="<%=phone%>" maxlength="11" style="width:216px">
 									</span>
 									</td>
 									
-										<td><span class="sms">"-"은 빼고 입력해 주세요.</span></td>
+									<td><span class="sms">"-"은 빼고 입력해 주세요.</span></td>
 								
 								</tr>
 								<tr>
@@ -140,17 +135,6 @@ String phone = customerInfo.getPhone();
 										<span class="tx"><input type="text" id="email" name="email" class="input" validate="empty" value="<%=customerInfo.getEmail()%>"></span>
 										<span class="sm" name="email" style="display:none;"></span>
 										<span class="sms">주문관련 정보에 대한 이메일과 SMS는 자동으로 전송됩니다.</span>
-										<span class="sms"><input type="checkbox" id="recv_chk" onclick=""><label for="recv_chk"><ins>마케팅용 SMS 및 이메일 수신 동의</ins></label>
-									(
-										<input type="checkbox" id="sms_recv_chk"><label for="sms_recv_chk">SMS</label>
-										<input type="checkbox" id="mail_recv_chk"><label for="mail_recv_chk">Email</label>
-									)
-										</span>
-										<input type="hidden" name="recv_yn" id="recv_yn">
-										<input type="hidden" name="sms_recv_yn" id="sms_recv_yn" value="N">
-										<input type="hidden" name="mail_recv_yn" id="mail_recv_yn" value="N">
-										<span class="sms"><input type="checkbox" id="forever_chk"><label for="forever_chk">개인정보 평생 보관동의(탈퇴시 삭제)</label></span>
-										<input type="hidden" name="forever_member_yn" id="forever_member_yn">
 									</td>
 								</tr>
 								
