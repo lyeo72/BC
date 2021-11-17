@@ -1,5 +1,5 @@
 <%@page import="vo.Productbean"%>
-<%@page import="vo.orderProductBean"%>
+<%@page import="vo.OrderProductBean"%>
 <%@page import="vo.PageInfo"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>

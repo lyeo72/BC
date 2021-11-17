@@ -18,7 +18,7 @@ import vo.OrderBean;
 import vo.Productbean;
 import vo.ReviewBean;
 import vo.OrderDetailBean;
-import vo.orderProductBean;
+import vo.OrderProductBean;
 
 public class OrderDAO {
 	private OrderDAO() {

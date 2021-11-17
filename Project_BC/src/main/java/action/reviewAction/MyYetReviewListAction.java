@@ -12,7 +12,7 @@ import vo.ActionForward;
 import vo.PageInfo;
 import vo.Productbean;
 import vo.ReviewBean;
-import vo.orderProductBean;
+import vo.OrderProductBean;
 
 public class MyYetReviewListAction implements Action {
 

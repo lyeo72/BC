@@ -1,4 +1,4 @@
-<%@page import="vo.orderProductBean"%>
+<%@page import="vo.OrderProductBean"%>
 <%@page import="vo.OrderDetailBean"%>
 <%@page import="vo.OrderBean"%>
 <%@page import="java.util.ArrayList"%>

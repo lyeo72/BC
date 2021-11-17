@@ -13,7 +13,7 @@ import svc.orderSvc.OrderListService;
 import vo.ActionForward;
 import vo.CustomerAddress;
 import vo.OrderBean;
-import vo.orderProductBean;
+import vo.OrderProductBean;
 
 public class OrderCheckAction implements Action {
 

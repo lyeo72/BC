@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import dao.ReviewDAO;
 import vo.Productbean;
 import vo.ReviewBean;
-import vo.orderProductBean;
+import vo.OrderProductBean;
 
 public class MyReviewService {
     public int getListCount(String id) {
