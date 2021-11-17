@@ -97,13 +97,12 @@ public class MemberController extends HttpServlet {
 		}else if(command.equals("/FindIdAndPw.me")) {
 			forward = new ActionForward();
 			forward.setPath("/member/findId.jsp");
-			forward.setRedirect(false); // Dispatcher 방식(기본값이므로 생략 가능)
+			forward.setRedirect(false); 
 		}else if(command.equals("/FindIdPro.me")) {
 			action = new FindIdProAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}else if(command.equals("/FindPwdPro.me")) {
@@ -149,7 +148,4 @@ public class MemberController extends HttpServlet {
 
 	
 }
-
-
-
 

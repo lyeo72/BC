@@ -34,8 +34,6 @@ public class SideController extends HttpServlet {
 				action = new SideAction();
 			
 			try {
-				// 업캐스팅 후에도 공통 메서드(상속받은 메서드)는 호출이 가능하므로
-				// Action 타입으로 execute() 메서드 호출 가능함
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -78,7 +76,7 @@ public class SideController extends HttpServlet {
 		
 		
 		if(forward != null) {
-			if(forward.isRedirect()) { // true = Redirect 방식
+			if(forward.isRedirect()) { 
 				response.sendRedirect(forward.getPath());
 			} else {
 				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
